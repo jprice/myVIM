@@ -1,3 +1,4 @@
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -109,4 +110,30 @@ set bs=2      " backspace
     au BufReadPost *.odt silent %!odt2txt "%"
 " Просмотр нетекстовых файлов в Vim <--
 
+
+" --- настройки для GUI ---
+if has("gui_running")
+
+	" удалить всё меню в GUI
+	aunmenu *
+
+	" размеры окна при открытии
+	set lines=75 columns=250
+
+	" основные параметры отображения
+	set guioptions=aci
+
+	" использовать контекстное меню
+	set mousemodel=popup
+
+	" разрешить фокусу прыгать за мышью между окнами
+	"set mousefocus
+
+	" не скрывать указатель при печати
+	set nomousehide
+
+	" начинать обзор с каталога текущего буфера
+	set browsedir=buffer
+
+endif
 
