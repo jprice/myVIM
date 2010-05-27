@@ -106,10 +106,10 @@ if has("gui_running")
 	set mousemodel=popup
 
 	" разрешить фокусу прыгать за мышью между окнами
-	"set mousefocus
+	set mousefocus
 
 	" не скрывать указатель при печати
-	set nomousehide
+	"set nomousehide
 
 	" начинать обзор с каталога текущего буфера
 	set browsedir=buffer
