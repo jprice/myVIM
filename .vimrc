@@ -36,6 +36,8 @@ set smartindent
 filetype plugin on
 filetype indent on
 
+set clipboard=unnamed,exclude:cons\\\|linux
+
 "  заменять табы пробелами
 set expandtab
 " использовать табуляцию в 2 пробела
@@ -125,7 +127,6 @@ set wrap
 " поиск и подсветка результатов и совпадения скобок
  set showmatch
  set hlsearch
- set incsearch
  set ignorecase
 
 " ленивая перерисовка экрана при выполнении скриптов
@@ -173,4 +174,6 @@ endif
 
 " {{{ Key mappings
 map <c-s> :w<cr>
+map <c-tab> :BufExplorer<cr>
+map <F9> :NERDTreeToggle<cr>
 " }}}
