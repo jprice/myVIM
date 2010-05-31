@@ -167,7 +167,9 @@ if has("gui_running")
 	"set nomousehide
 
 	" начинать обзор с каталога текущего буфера
-	set browsedir=buffer
+	"set browsedir=buffeset 
+  
+  set guifont=Monospace\ 12
 
 endif
 " }}}
