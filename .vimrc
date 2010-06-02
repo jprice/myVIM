@@ -182,5 +182,5 @@ map <F9> :NERDTreeToggle<cr>
 " }}}
 "
 " {{{ vars
-let g:dojo_root='public/ria/src'
+let g:dojo_root='./public/ria/src'
 " }}}
