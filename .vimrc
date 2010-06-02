@@ -180,3 +180,7 @@ map <c-s> :w<cr>
 map <c-tab> :BufExplorer<cr>
 map <F9> :NERDTreeToggle<cr>
 " }}}
+"
+" {{{ vars
+let g:dojo_root='public/ria/src'
+" }}}
