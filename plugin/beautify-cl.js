@@ -16,8 +16,8 @@
   [1] http://www.mozilla.org/rhino/
 
 */
-load("~/.vim/plugin/beautify.js");
-load("~/.vim/plugin/beautify-html.js");
+load("/home/hamster/.vim/plugin/beautify.js");
+load("/home/hamster/.vim/plugin/beautify-html.js");
 
 
 function print_usage() {

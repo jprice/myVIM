@@ -74,13 +74,13 @@ endfun
 
 function! FormatJs()
   normal mp
-  execute  "%!js ~/.vim/plugin/beautify-cl.js -a"
+  execute  "%!rhino ~/.vim/plugin/beautify-cl.js -a"
   normal `p
 endfunction
 
 function! FormatHtml()
   normal mp
-  execute  "%!js ~/.vim/plugin/beautify-cl.js"
+  execute  "%!rhino ~/.vim/plugin/beautify-cl.js"
   normal `p
 endfunction
 
