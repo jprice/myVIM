@@ -1,3 +1,4 @@
+" test
 " settings  {{{
 "
 " Use Vim settings, rather then Vi settings (much better!).
@@ -158,10 +159,10 @@ if has("gui_running")
 	set guioptions=aci
 
 	" использовать контекстное меню
-	set mousemodel=popup
+	"set mousemodel=popup
 
 	" разрешить фокусу прыгать за мышью между окнами
-	set mousefocus
+	"set mousefocus
 
 	" не скрывать указатель при печати
 	"set nomousehide
@@ -169,7 +170,7 @@ if has("gui_running")
 	" начинать обзор с каталога текущего буфера
 	"set browsedir=buffeset 
   
-  set guifont=Monospace\ 12
+  set guifont=Monospace\ 11
 
 endif
 " }}}
@@ -178,4 +179,8 @@ endif
 map <c-s> :w<cr>
 map <c-tab> :BufExplorer<cr>
 map <F9> :NERDTreeToggle<cr>
+" }}}
+"
+" {{{ vars
+let g:dojo_root='./public/ria/src'
 " }}}
