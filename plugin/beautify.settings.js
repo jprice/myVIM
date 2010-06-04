@@ -1,2 +1,2 @@
-load("/home/al/.vim/plugin/beautify.js");
-load("/home/al/.vim/plugin/beautify-html.js");
+load("/home/hamster/.vim/plugin/beautify.js");
+load("/home/hamster/.vim/plugin/beautify-html.js");
