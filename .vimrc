@@ -35,7 +35,7 @@ set smartindent
 
 " определять подсветку на основе кода файла
 filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 set clipboard=unnamed,exclude:cons\\\|linux
 
