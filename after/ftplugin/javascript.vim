@@ -1,4 +1,4 @@
-setlocal makeprg=cat\ %\ \\\|\ js\ ~/.vim/plugin/runjslint.js\ %
+setlocal makeprg=cat\ %\ \\\|\ js\ /home/al/.vim/plugin/runjslint.js\ %
 setlocal noexpandtab
 
 map <buffer> <s-f> :call FormatJs()<cr>

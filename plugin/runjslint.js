@@ -1,5 +1,5 @@
 (function(a) {
-  var path='~/.vim/plugin/';
+  var path='/home/al/.vim/plugin/';
   load(path + 'jslint.js');
   load(path + 'jslint.settings.js');
 var input = readFile(a[0]);
