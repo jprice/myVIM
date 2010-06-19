@@ -170,7 +170,7 @@ if has("gui_running")
 	" начинать обзор с каталога текущего буфера
 	"set browsedir=buffeset 
   
-  set guifont=Monospace\ 11
+  set guifont=Monospace\ 12
 
 endif
 " }}}
