@@ -179,6 +179,10 @@ endif
 map <c-s> :w<cr>
 map <c-tab> :BufExplorer<cr>
 map <F9> :NERDTreeToggle<cr>
+
+map <F5> :! ./%<cr>
+
+"
 " }}}
 "
 " {{{ vars
