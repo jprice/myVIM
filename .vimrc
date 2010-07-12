@@ -186,5 +186,5 @@ map <F5> :! ./%<cr>
 " }}}
 "
 " {{{ vars
-let g:dojo_root='./public/ria/src'
+let g:dojo_root='/home/al/projects/webmedapp/public/ria/src'
 " }}}
