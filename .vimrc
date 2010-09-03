@@ -142,8 +142,13 @@ set wrap
 
 
 " тема, цвета {{{
-colorscheme lucius
-hi Normal           guifg=#e4e4e4           guibg=#000000
+"colorscheme lucius
+color lucius
+"hi Normal           guifg=#e4e4e4           guibg=#000000
+"set background=dark
+"highlight Normal ctermbg=0
+hi Normal           guifg=#e0e0e0           guibg=#202020
+hi Normal           ctermfg=253             ctermbg=16
 " }}}
 
 " настройки для GUI {{{
@@ -177,7 +182,7 @@ endif
 
 " {{{ Key mappings
 map <c-s> :w<cr>
-map <c-tab> :BufExplorer<cr>
+map <s-tab> :BufExplorer<cr>
 map <F9> :NERDTreeToggle<cr>
 
 map <F5> :! ./%<cr>
