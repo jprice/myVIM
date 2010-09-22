@@ -59,7 +59,7 @@ set splitbelow
 set nojoinspaces
 
 " строка статуса
-set statusline=%1*%m%*%2*%r%*%F%=\ Col:%3*%03c%*\ Ln:%3*%03l%*/%3*%03L%*\ File:%15*%{&filetype}%*/%3*%{&fileformat}%*/%3*%{&fileencoding}%*%<
+set statusline=%1*%m%*%2*%r%*%F%=\ %{fugitive#statusline()}\ Col:%3*%03c%*\ Ln:%3*%03l%*/%3*%03L%*\ File:%15*%{&filetype}%*/%3*%{&fileformat}%*/%3*%{&fileencoding}%*%<
 set laststatus=2
 
 " показывать непечатаемые символы
@@ -134,9 +134,9 @@ set wrap
 " set lz
 
 " In many terminal emulators the mouse works just fine, thus enable it.
-" if has('mouse')
-"  set mouse=a
-"endif
+if has('mouse')
+ set mouse=a
+endif
 
 "}}}
 
@@ -149,6 +149,7 @@ color lucius
 "highlight Normal ctermbg=0
 hi Normal           guifg=#e0e0e0           guibg=#202020
 hi Normal           ctermfg=253             ctermbg=16
+hi StatusLine guifg=White guibg=Blue gui=NONE ctermfg=White ctermbg=Blue
 " }}}
 
 " настройки для GUI {{{
