@@ -1,8 +1,9 @@
-setlocal makeprg=cat\ %\ \\\|\ js\ /home/al/.vim/plugin/runjslint.js\ %
+setlocal makeprg=cat\ %\ \\\|\ js\ ~/.vim/plugin/runjslint.js\ %
+setlocal equalprg=js\ ~/.vim/plugin/beautify-cl.js\ js\ null
 setlocal noexpandtab
 
-map <buffer> <c-f> :call FormatJs()<cr>
-map <buffer> <F2> :call FormatJs()<cr>:call MakeSave()<cr> :redraw!<cr>
-imap <buffer> <c-s> <esc>:call FormatJs()<cr>:call MakeSave()<cr> :redraw!<cr>
+map <buffer> <s-f> :call FormatAll()<cr>
+map <buffer> <c-s> :call FormatAll()<cr>:call MakeSave()<cr>
+imap <buffer> <c-s> <esc>:call FormatAll()<cr>:call MakeSave()<cr>
 
-noremap <buffer> <c-o> :call DojoOpenClassUnderCursor()<cr>
+noremap <buffer> gf :call DojoOpenClassUnderCursor()<cr>
