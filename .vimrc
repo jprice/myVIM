@@ -182,7 +182,7 @@ endif
 " }}}
 
 " {{{ Key mappings
-map <c-s> :w<cr>
+"map <c-s> :w<cr>
 map <s-tab> :BufExplorer<cr>
 map <F9> :NERDTreeToggle<cr>
 
@@ -192,5 +192,5 @@ map <F5> :! ./%<cr>
 " }}}
 "
 " {{{ vars
-let g:dojo_root='/home/al/projects/webmedapp/public/ria/src'
+let g:dojo_root='/public/ria/src'
 " }}}
