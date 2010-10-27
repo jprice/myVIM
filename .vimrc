@@ -30,10 +30,6 @@ set autoindent
 " Включаем 'умную' автоматическую расстановку отступов
 set smartindent
 
-" определять подсветку на основе кода файла
-filetype plugin on
-filetype plugin indent on
-
 set clipboard=unnamed,exclude:cons\\\|linux
 
 "  заменять табы пробелами
@@ -177,6 +173,13 @@ if has("gui_running")
 
 endif
 " }}}
+"
+" {{{ Commands
+command! -nargs=* Find :call Find(<f-args>)
+command! Vimrc e ~/.vimrc
+command! Medapp :call OpenProject('webmedapp')
+command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
+" }}} Commands
 
 " {{{ Key mappings
 "map <c-s> :w<cr>
@@ -186,8 +189,19 @@ map <F9> :NERDTreeToggle<cr>
 map <F5> :! ./%<cr>
 
 "
+call pathogen#runtime_append_all_bundles() 
+"
 " }}}
 "
 " {{{ vars
-let g:dojo_root='/home/al/projects/webmedapp/public/ria/src'
+let javascript_fold=0
+let g:NERDTreeWinSize=50
+let g:dojo_root='public/ria/src'
+"With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
 " }}}
+" определять подсветку на основе кода файла
+filetype plugin on
+filetype plugin indent on
