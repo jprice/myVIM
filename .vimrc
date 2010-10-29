@@ -120,7 +120,7 @@ set wrap
 
 " поиск и подсветка результатов и совпадения скобок
  set showmatch
- set hlsearch
+ "set hlsearch
  set ignorecase
 
 " ленивая перерисовка экрана при выполнении скриптов
@@ -134,12 +134,9 @@ endif
 "}}}
 
 
-" тема, цвета {{{
+" Color settings {{{
 "colorscheme lucius
 color lucius
-"hi Normal           guifg=#e4e4e4           guibg=#000000
-"set background=dark
-"highlight Normal ctermbg=0
 hi Normal           guifg=#e0e0e0           guibg=#202020
 hi Normal           ctermfg=253             ctermbg=16
 hi StatusLine guifg=White guibg=Blue gui=NONE ctermfg=White ctermbg=Blue
@@ -147,29 +144,22 @@ hi StatusLine guifg=White guibg=Blue gui=NONE ctermfg=White ctermbg=Blue
 
 " настройки для GUI {{{
 if has("gui_running")
-
 	" удалить всё меню в GUI
 	aunmenu *
-
 	" размеры окна при открытии
 	set lines=50 columns=120
-
 	" основные параметры отображения
 	set guioptions=aci
-
 	" использовать контекстное меню
 	"set mousemodel=popup
-
 	" разрешить фокусу прыгать за мышью между окнами
 	"set mousefocus
-
 	" не скрывать указатель при печати
 	"set nomousehide
-
 	" начинать обзор с каталога текущего буфера
 	"set browsedir=buffeset 
-  
   set guifont=Monospace\ 11
+  set background=dark
 
 endif
 " }}}
@@ -188,20 +178,35 @@ map <F9> :NERDTreeToggle<cr>
 
 map <F5> :! ./%<cr>
 
-"
+
+"set hidden
+
+if has("autocmd")
+  " Enable filetype detection
+  filetype plugin indent on
+ 
+  " Restore cursor position
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+endif
+
+
 call pathogen#runtime_append_all_bundles() 
-"
 " }}}
-"
+
 " {{{ vars
 let javascript_fold=0
 let g:NERDTreeWinSize=50
+let g:rails_mappings=0
 let g:dojo_root='public/ria/src'
 "With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
-" }}}
+" }}} vars
+
 " определять подсветку на основе кода файла
 filetype plugin on
 filetype plugin indent on
