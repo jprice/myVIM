@@ -172,12 +172,19 @@ command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
 " }}} Commands
 
 " {{{ Key mappings
-"map <c-s> :w<cr>
-map <s-tab> :BufExplorer<cr>
-map <F9> :NERDTreeToggle<cr>
+nmap <C-s> :w<CR>
+map <F8> :BufExplorer<cr>
 
+nmap <F9> :NERDTreeToggle<cr>
+vmap <F9> <esc>:NERDTreeToggle<cr>i
+imap <F9> <esc>:NERDTreeToggle<cr>i
+
+map <silent> <F10> :w<CR>:make<CR>:call FormatAll()<cr>:cw<CR>
+
+"open vimrc
 map <F5> :! ./%<cr>
 
+map <s-f> :call FormatAll()<cr>
 
 "set hidden
 
@@ -198,7 +205,7 @@ call pathogen#runtime_append_all_bundles()
 
 " {{{ vars
 let javascript_fold=0
-let g:NERDTreeWinSize=50
+let g:NERDTreeWinSize=40
 let g:rails_mappings=0
 let g:dojo_root='public/ria/src'
 "With a map leader it's possible to do extra key combinations
@@ -210,3 +217,36 @@ let g:mapleader = ","
 " определять подсветку на основе кода файла
 filetype plugin on
 filetype plugin indent on
+
+function! SKEL_spec()
+	0r /usr/share/vim/current/skeletons/skeleton.spec
+	language time en_US
+	if $USER != ''
+	    let login = $USER
+	elseif $LOGNAME != ''
+	    let login = $LOGNAME
+	else
+	    let login = 'unknown'
+	endif
+	let newline = stridx(login, "\n")
+	if newline != -1
+	    let login = strpart(login, 0, newline)
+	endif
+	if $HOSTNAME != ''
+	    let hostname = $HOSTNAME
+	else
+	    let hostname = system('hostname -f')
+	    if v:shell_error
+		let hostname = 'localhost'
+	    endif
+	endif
+	let newline = stridx(hostname, "\n")
+	if newline != -1
+	    let hostname = strpart(hostname, 0, newline)
+	endif
+	exe "%s/specRPM_CREATION_DATE/" . strftime("%a\ %b\ %d\ %Y") . "/ge"
+	exe "%s/specRPM_CREATION_AUTHOR_MAIL/" . login . "@" . hostname . "/ge"
+	exe "%s/specRPM_CREATION_NAME/" . expand("%:t:r") . "/ge"
+	setf spec
+endfunction
+autocmd BufNewFile	*.spec	call SKEL_spec()

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'NERDAllowAnyVisualDelims'	NERD_commenter.txt	/*'NERDAllowAnyVisualDelims'*
 'NERDBlockComIgnoreEmpty'	NERD_commenter.txt	/*'NERDBlockComIgnoreEmpty'*
 'NERDChristmasTree'	NERD_tree.txt	/*'NERDChristmasTree'*
@@ -153,3 +154,10 @@ g:bufExplorerSortBy	bufexplorer.txt	/*g:bufExplorerSortBy*
 g:bufExplorerSplitBelow	bufexplorer.txt	/*g:bufExplorerSplitBelow*
 g:bufExplorerSplitOutPathName	bufexplorer.txt	/*g:bufExplorerSplitOutPathName*
 g:bufExplorerSplitRight	bufexplorer.txt	/*g:bufExplorerSplitRight*
+=======
+b:SgmlCompleteEndTagIgnore	sgmlendtag.txt	/*b:SgmlCompleteEndTagIgnore*
+sgmlendtag	sgmlendtag.txt	/*sgmlendtag*
+sgmlendtag-configuration	sgmlendtag.txt	/*sgmlendtag-configuration*
+sgmlendtag-overview	sgmlendtag.txt	/*sgmlendtag-overview*
+sgmlendtag.txt	sgmlendtag.txt	/*sgmlendtag.txt*
+>>>>>>> 78abf8f... now use jslint by npm, change supertab reposotory
