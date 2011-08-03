@@ -250,3 +250,4 @@ function! SKEL_spec()
 	setf spec
 endfunction
 autocmd BufNewFile	*.spec	call SKEL_spec()
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
