@@ -250,4 +250,5 @@ function! SKEL_spec()
 	setf spec
 endfunction
 autocmd BufNewFile	*.spec	call SKEL_spec()
+autocmd BufLeave,FocusLost * silent! wall
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
