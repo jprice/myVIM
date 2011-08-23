@@ -197,6 +197,10 @@ if has("autocmd")
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
+    augroup php
+      autocmd BufRead *.php setlocal nocursorline
+    augroup END
+
 endif
 
 
