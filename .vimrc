@@ -172,6 +172,9 @@ command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
 " }}} Commands
 
 " {{{ Key mappings
+map <F2> <Esc>:setlocal spell spelllang=en_gb<CR>
+map <F3> <Esc>:setlocal nospell<CR>
+
 nmap <C-s> :w<CR>
 map <F8> :BufExplorer<cr>
 
