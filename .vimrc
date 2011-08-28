@@ -83,7 +83,7 @@ set nolazyredraw
 set showcmd
 
 " показывать первую парную скобку после ввода второй ...
-set showmatch
+"set showmatch
 
 " показывать совпадающие скобки для HTML-тегов
 set matchpairs+=<:>
@@ -123,16 +123,12 @@ set wrap
  "set hlsearch
  set ignorecase
 
-" ленивая перерисовка экрана при выполнении скриптов
-" set lz
-
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
  set mouse=a
 endif
 
 "}}}
-
 
 " Color settings {{{
 "colorscheme lucius
@@ -175,7 +171,6 @@ command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
 map <F2> <Esc>:setlocal spell spelllang=en_gb<CR>
 map <F3> <Esc>:setlocal nospell<CR>
 
-nmap <C-s> :w<CR>
 map <F8> :BufExplorer<cr>
 
 nmap <F9> :NERDTreeToggle<cr>
@@ -183,11 +178,6 @@ vmap <F9> <esc>:NERDTreeToggle<cr>i
 imap <F9> <esc>:NERDTreeToggle<cr>i
 
 map <silent> <F10> :w<CR>:make<CR>:call FormatAll()<cr>:cw<CR>
-
-"open vimrc
-map <F5> :! ./%<cr>
-
-map <s-f> :call FormatAll()<cr>
 
 "set hidden
 
@@ -205,7 +195,6 @@ if has("autocmd")
     augroup END
 
 endif
-
 
 call pathogen#runtime_append_all_bundles() 
 " }}}
@@ -256,6 +245,6 @@ function! SKEL_spec()
 	exe "%s/specRPM_CREATION_NAME/" . expand("%:t:r") . "/ge"
 	setf spec
 endfunction
-autocmd BufNewFile	*.spec	call SKEL_spec()
+
 autocmd BufLeave,FocusLost * silent! wall
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
