@@ -93,9 +93,11 @@ set wildmenu
 " ... с авто-дополнением
 set wildcharm=<TAB>
 
-" Отключаем создание бэкапов
-"set nobackup
+" Отключаем создание бэкапов - set nobackup
 set backup
+
+" Все .~ файлы будут помещаться в эту папку
+set backupdir=~/.vim/backups
 
 " Все swap файлы будут помещаться в эту папку
 set dir=~/.vim/swp
