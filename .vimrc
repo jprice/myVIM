@@ -6,7 +6,7 @@ set cursorline
 
 " Включаем подсветку синтаксиса
 syntax on
-		
+
 " do incremental searching
 set incsearch
 
@@ -125,6 +125,9 @@ set wrap
  "set hlsearch
  set ignorecase
 
+" jslint plugin. 
+let g:JSLintHighlightErrorLine = 0 " don't show error in the main window
+
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
  set mouse=a
@@ -179,7 +182,7 @@ nmap <F9> :NERDTreeToggle<cr>
 vmap <F9> <esc>:NERDTreeToggle<cr>i
 imap <F9> <esc>:NERDTreeToggle<cr>i
 
-map <silent> <F10> :w<CR>:make<CR>:call g:Jsbeautify()<cr>:cw<CR>
+map <silent> <F10> :wall<CR>:call g:Jsbeautify()<cr>:JSLintUpdate<cr>:cw<CR>
 
 "set hidden
 
