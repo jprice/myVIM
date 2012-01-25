@@ -70,6 +70,7 @@ function! FormatAll()
   normal mp
   normal gg=G
   normal `p
+  redraw!
 endfun
 
 function! MakeSave()

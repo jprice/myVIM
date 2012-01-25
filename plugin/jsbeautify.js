@@ -27,14 +27,10 @@ or working for you.
 
 */
 
-
-require.paths.unshift( "/home/al/.vim/bundle/jsbeautify" );
-
-
 ( function() {
   
   var fs = require( "fs" ),
-    sys = require( "sys" ),
+    sys = require( "util" ),
     http = require( "http" ),
     url = require( "url" ),
     jsb = require( "beautify" ),

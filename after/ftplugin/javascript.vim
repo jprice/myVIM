@@ -1,11 +1,4 @@
+setlocal equalprg=node\ ~/.vim/plugin/jsbeautify.js\ -n\ -i\ 1
 setlocal noexpandtab
 
 noremap <buffer> gf :call DojoOpenClassUnderCursor()<cr>
-
-setlocal makeprg=jslint\ %
-setlocal errorformat=%-P%f,
-                    \%-G/*jslint\ %.%#*/,
-                    \%*[\ ]%n\ %l\\,%c:\ %m,
-                    \%-G\ \ \ \ %.%#,
-                    \%-GNo\ errors\ found.,
-                    \%-Q

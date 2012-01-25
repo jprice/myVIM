@@ -182,7 +182,7 @@ nmap <F9> :NERDTreeToggle<cr>
 vmap <F9> <esc>:NERDTreeToggle<cr>i
 imap <F9> <esc>:NERDTreeToggle<cr>i
 
-map <silent> <F10> :wall<CR>:call g:Jsbeautify()<cr>:JSLintUpdate<cr>:cw<CR>
+map <silent> <F10> :wall<CR>:call FormatAll()<cr>:JSLintUpdate<cr>:cw<CR>
 
 "set hidden
 
