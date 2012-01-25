@@ -1,13 +1,14 @@
 #!/usr/bin/sh
-echo 'export NODE_PATH=$HOME/.vim/bundle/js-beautify:$NODE_PATH' >> ~/.profile
 
-#FIXME: doesn't affect immediately.
-source ~/.profile
+# run: . .vim/install.sh to install environment
+
+echo 'export NODE_PATH=$HOME/.vim/bundle/js-beautify:$NODE_PATH' >> ~/.profile
+export NODE_PATH=$HOME/.vim/bundle/js-beautify:$NODE_PATH
 
 # create environment directories
-mkdir -p ~/.vim/swp
-mkdir -p ~/.vim/backups
+mkdir -pv ~/.vim/swp
+mkdir -pv ~/.vim/backups
 
 #symlinks
-ln -sf ~/.vim/.vimrc ~/.vimrc
-ln -sf ~/.vim/.jslintrc ~/.jslintrc
+ln -sfv ~/.vim/.vimrc ~/.vimrc
+ln -sfv ~/.vim/.jslintrc ~/.jslintrc
