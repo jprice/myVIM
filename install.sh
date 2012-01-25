@@ -9,5 +9,5 @@ mkdir -p ~/.vim/swp
 mkdir -p ~/.vim/backups
 
 #symlinks
-ln -sf ~/.vim/.vimrc .vimrc
-ln -sf ~/.vim/.jslintrc .jslintrc
+ln -sf ~/.vim/.vimrc ~/.vimrc
+ln -sf ~/.vim/.jslintrc ~/.jslintrc
