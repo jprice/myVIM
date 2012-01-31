@@ -13,3 +13,6 @@
 [submodule "bundle/js-beautify"]
 	path = bundle/js-beautify
 	url = git://github.com/einars/js-beautify.git
+[submodule "bundle/jslint"]
+	path = bundle/jslint
+	url = git://github.com/alexbel/jslint.vim.git
