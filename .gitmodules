@@ -16,3 +16,6 @@
 [submodule "bundle/jslint"]
 	path = bundle/jslint
 	url = git://github.com/alexbel/jslint.vim.git
+[submodule "bundle/vim-powerline"]
+	path = bundle/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
