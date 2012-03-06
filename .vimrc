@@ -1,149 +1,102 @@
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General behaviour
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use Vim settings, rather then Vi settings (much better!). This must be first, because it changes other options as a side effect.
 set nocompatible
-
-set cursorline
-
-" Включаем подсветку синтаксиса
-syntax on
-
 " do incremental searching
 set incsearch
-
-" не ждать завершения ESC-последовательностей
+" don't wait ESC-sequences
 set ttimeoutlen=100
-
-" читать параметры конфигурации из открытого файла
-set modeline
-
-" перечитывать изменённые файлы автоматически
-set autoread
-
-" использовать больше цветов в терминале
-set t_Co=256
-
-" разрешить backspace в режиме вставки
-set backspace=2
-
-" Копирует отступ от предыдущей строки
-set autoindent
-" Включаем 'умную' автоматическую расстановку отступов
-set smartindent
-
-set clipboard=unnamed,exclude:cons\\\|linux
-
-"  заменять табы пробелами
-set expandtab
-" использовать табуляцию в 2 пробела
-"set softtabstop=2
-set shiftwidth=2
-set tabstop=2
-set smarttab
-
-" расстояние до края при вертикальной прокрутке
-set scrolloff=5
-" размер прыжка при вертикальной прокрутке
-set scrolljump=10
-
-" открывать новое окно снизу
-set splitbelow
-
-" не вставлять лишних пробелов при объединении строк
-set nojoinspaces
-
-" строка статуса
-set statusline=%1*%m%*%2*%r%*%F%=\ Col:%3*%03c%*\ Ln:%3*%03l%*/%3*%03L%*\ File:%15*%{&filetype}%*/%3*%{&fileformat}%*/%3*%{&fileencoding}%*%<
-set laststatus=2
-
-" показывать непечатаемые символы
-"set list listchars=tab:··,trail:·,extends:»,precedes:«
-
-" кодировка по-умолчанию
-set encoding=utf-8
-"порядок переборы кодировок
-set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
-
-" больше истории команд
-set history=50		
-" ... и правок
+" more commands history
+set history=100
+" ... and more undolevels
 set undolevels=2048
-
-"  показывать строку с позицией курсора
-set ruler
-
-set number
-
-" показывать имя буфера в заголовке терминала
-set title
-
-" перерисовывать буфер менее плавно
-set nolazyredraw
-
-" показывать буфер вводимой команды
-set showcmd
-
-" показывать первую парную скобку после ввода второй ...
-"set showmatch
-
-" показывать совпадающие скобки для HTML-тегов
-set matchpairs+=<:>
-
-" использовать wildmenu ...
-set wildmenu
-" ... с авто-дополнением
-set wildcharm=<TAB>
-
-" Отключаем создание бэкапов - set nobackup
-set backup
-
-" Все .~ файлы будут помещаться в эту папку
-set backupdir=~/.vim/backups
-
-" Все swap файлы будут помещаться в эту папку
-set dir=~/.vim/swp
-
-" показывать строку статуса всегда
-set laststatus=2
-
-" включим автозамену по умолчанию
-set et
-
-" удалять лишние пробелы при отступе
-set shiftround
-
-" переносить длинные строки
-set wrap
-
-" автоотступы для новых строк
-" set ai
-"
-" отступы в стиле Си
-" set cin
-
-" поиск и подсветка результатов и совпадения скобок
- set showmatch
- "set hlsearch
- set ignorecase
-
-" jslint plugin. 
-let g:JSLintHighlightErrorLine = 0 " don't show error in the main window
-
+" reread the changed files automatically
+set autoread
+" allow backspace in insert mode
+set backspace=2
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
  set mouse=a
 endif
 
-"}}}
+set clipboard=unnamed,exclude:cons\\\|linux
 
-" Color settings {{{
-"colorscheme lucius
+" Indent settings
+" ---------------
+set tabstop=2
+set shiftwidth=2
+" Default to 2 spaces as tabs
+set softtabstop=2
+" replace tabs by spaces
+set expandtab
+
+" Backup and swap settings
+" -----------------------
+set backup
+set backupdir=~/.vim/backups
+set dir=~/.vim/swp
+
+
+" Filetypes and encoding
+" ----------------------
+" utf-8 by default 
+set encoding=utf-8
+" the order of enumeration encoding
+set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" User interface setings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax on
+
+set cursorline
+" more colors 
+set t_Co=256
+" colorscheme lucius
 color lucius
 hi Normal           guifg=#e0e0e0           guibg=#202020
 hi Normal           ctermfg=253             ctermbg=16
 hi StatusLine guifg=White guibg=Blue gui=NONE ctermfg=White ctermbg=Blue
-" }}}
 
-" настройки для GUI {{{
+"vertical/horizontal scroll off settings
+set scrolloff=3
+set sidescrolloff=7
+set sidescroll=1
+
+" Status line. Show always. Plugin vim-powerline
+"set statusline=%1*%m%*%2*%r%*%F%=\ Col:%3*%03c%*\ Ln:%3*%03l%*/%3*%03L%*\ File:%15*%{&filetype}%*/%3*%{&fileformat}%*/%3*%{&fileencoding}%*%<
+" always show statusline
+set laststatus=2
+
+" show non-printing characters
+set list listchars=tab:··,trail:·,extends:»,precedes:«
+
+set number
+" set indentation as previous line
+set autoindent
+set smartindent
+" Show name of buffer in terminal title
+set title
+
+set nolazyredraw
+" show incomplete cmds down the bottom
+set showcmd
+" search and highlighting for brackets
+set showmatch
+" show brackets for HTML-tags
+"set hlsearch
+set ignorecase
+
+set matchpairs+=<:>
+" use wildmenu
+set wildmenu
+set wildcharm=<TAB>
+" переносить длинные строки
+set wrap
+" GUI
+" ---
 if has("gui_running")
 	" удалить всё меню в GUI
 	aunmenu *
@@ -161,35 +114,43 @@ if has("gui_running")
 	"set browsedir=buffeset 
   set guifont=Monospace\ 11
   set background=dark
-
 endif
-" }}}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vars
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let javascript_fold=0
+let g:NERDTreeWinSize=40
+let mapleader = ","
+let g:mapleader = ","
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" jslint
+let g:JSLintHighlightErrorLine = 0 " don't show error in the main window
 "
-" {{{ Commands
+call pathogen#runtime_append_all_bundles()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Commands and mappings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! -nargs=* Find :call Find(<f-args>)
 command! Vimrc e ~/.vimrc
-command! Medapp :call OpenProject('webmedapp')
 command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
-" }}} Commands
 
-" {{{ Key mappings
+" Key mappings
 map <F2> <Esc>:setlocal spell spelllang=en_gb<CR>
 map <F3> <Esc>:setlocal nospell<CR>
-
 map <F8> :BufExplorer<cr>
-
 nmap <F9> :NERDTreeToggle<cr>
 vmap <F9> <esc>:NERDTreeToggle<cr>i
 imap <F9> <esc>:NERDTreeToggle<cr>i
-
 map <silent> <F10> :wall<CR>:call FormatAll()<cr>:JSLintUpdate<cr>:cw<CR>
 
-"set hidden
+
 
 if has("autocmd")
-  " Enable filetype detection
-  filetype plugin indent on
- 
   " Restore cursor position
   autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -198,58 +159,11 @@ if has("autocmd")
     augroup php
       autocmd BufRead *.php setlocal nocursorline
     augroup END
-
 endif
 
-call pathogen#runtime_append_all_bundles() 
-" }}}
-
-" {{{ vars
-let javascript_fold=0
-let g:NERDTreeWinSize=40
-let g:rails_mappings=0
-let g:dojo_root='public/ria/src'
-"With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
-" }}} vars
-
-" определять подсветку на основе кода файла
+" Enable filetype detection
 filetype plugin on
 filetype plugin indent on
-
-function! SKEL_spec()
-	0r /usr/share/vim/current/skeletons/skeleton.spec
-	language time en_US
-	if $USER != ''
-	    let login = $USER
-	elseif $LOGNAME != ''
-	    let login = $LOGNAME
-	else
-	    let login = 'unknown'
-	endif
-	let newline = stridx(login, "\n")
-	if newline != -1
-	    let login = strpart(login, 0, newline)
-	endif
-	if $HOSTNAME != ''
-	    let hostname = $HOSTNAME
-	else
-	    let hostname = system('hostname -f')
-	    if v:shell_error
-		let hostname = 'localhost'
-	    endif
-	endif
-	let newline = stridx(hostname, "\n")
-	if newline != -1
-	    let hostname = strpart(hostname, 0, newline)
-	endif
-	exe "%s/specRPM_CREATION_DATE/" . strftime("%a\ %b\ %d\ %Y") . "/ge"
-	exe "%s/specRPM_CREATION_AUTHOR_MAIL/" . login . "@" . hostname . "/ge"
-	exe "%s/specRPM_CREATION_NAME/" . expand("%:t:r") . "/ge"
-	setf spec
-endfunction
 
 autocmd BufLeave,FocusLost * silent! wall
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
