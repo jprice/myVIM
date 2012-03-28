@@ -169,3 +169,4 @@ filetype plugin indent on
 
 autocmd BufLeave,FocusLost * silent! wall
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+au BufRead,BufNewFile /etc/nginx/* set ft=nginx 
