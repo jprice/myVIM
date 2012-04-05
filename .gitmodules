@@ -22,3 +22,6 @@
 [submodule "bundle/nginx"]
 	path = bundle/nginx
 	url = git://github.com/vim-scripts/nginx.vim.git
+[submodule "bundle/YankRing"]
+	path = bundle/YankRing
+	url = git://github.com/vim-scripts/YankRing.vim.git

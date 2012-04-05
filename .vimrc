@@ -125,6 +125,8 @@ let javascript_fold=0
 let g:NERDTreeWinSize=40
 let mapleader = ","
 let g:mapleader = ","
+let g:yankring_manual_clipboard_check = 0
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -142,7 +144,7 @@ command! Vimrc e ~/.vimrc
 command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
 
 " Key mappings
-map <F2> <Esc>:setlocal spell spelllang=en_gb<CR>
+nnoremap <silent> <F2> :YRShow<CR> 
 map <F3> <Esc>:setlocal nospell<CR>
 map <F8> :BufExplorer<cr>
 nmap <F9> :NERDTreeToggle<cr>
