@@ -1,6 +1,6 @@
 viminfo
-swp
-backups
+swp/*
+backups/*
 *~
 .netrwhist
 beautify.settings
