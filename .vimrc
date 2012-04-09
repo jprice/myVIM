@@ -126,6 +126,8 @@ let g:NERDTreeWinSize=40
 let mapleader = ","
 let g:mapleader = ","
 let g:yankring_manual_clipboard_check = 0
+let g:yankring_history_dir = expand('$HOME').'/.vim/backups'
+let g:yankring_history_file = '.yankring_history'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins settings
