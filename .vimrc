@@ -67,8 +67,6 @@ set scrolloff=3
 set sidescrolloff=7
 set sidescroll=1
 
-" Using plugin "vim-powerline" instead of standart status line
-"set statusline=%1*%m%*%2*%r%*%F%=\ Col:%3*%03c%*\ Ln:%3*%03l%*/%3*%03L%*\ File:%15*%{&filetype}%*/%3*%{&fileformat}%*/%3*%{&fileencoding}%*%<
 " always show statusline
 set laststatus=2
 
@@ -134,8 +132,10 @@ let g:yankring_history_file = '.yankring_history'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " jslint
 let g:JSLintHighlightErrorLine = 0 " don't show error in the main window
-"
-call pathogen#runtime_append_all_bundles()
+" pathogen
+call pathogen#infect()
+" ctrlp 
+set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
