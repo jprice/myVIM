@@ -120,22 +120,35 @@ endif
 " Vars
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let javascript_fold=0
-let g:NERDTreeWinSize=40
 let mapleader = ","
 let g:mapleader = ","
-let g:yankring_manual_clipboard_check = 0
-let g:yankring_history_dir = expand('$HOME').'/.vim/backups'
-let g:yankring_history_file = '.yankring_history'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree
+let g:NERDTreeWinSize=40
+
 " jslint
 let g:JSLintHighlightErrorLine = 0 " don't show error in the main window
+
 " pathogen
 call pathogen#infect()
+
 " ctrlp 
 set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
+
+" neocomplcache 
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+
+" yankring
+let g:yankring_manual_clipboard_check = 0
+let g:yankring_history_dir = expand('$HOME').'/.vim/backups'
+let g:yankring_history_file = '.yankring_history'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -146,13 +159,21 @@ command! Vimrc e ~/.vimrc
 command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
 
 " Key mappings
-nnoremap <silent> <F2> :YRShow<CR> 
-map <F3> <Esc>:setlocal nospell<CR>
-map <F8> :BufExplorer<cr>
-nmap <F9> :NERDTreeToggle<cr>
-vmap <F9> <esc>:NERDTreeToggle<cr>i
-imap <F9> <esc>:NERDTreeToggle<cr>i
-map <silent> <F10> :wall<CR>:call FormatAll()<cr>:JSLintUpdate<cr>:cw<CR>
+"
+" q: sucks
+nmap q: :q
+
+map               <F3> <Esc>:setlocal nospell<CR>
+nnoremap <silent> <F4> :YRShow<CR>
+map               <F8> :BufExplorer<cr>
+nmap              <F9>      :NERDTreeToggle<cr>
+vmap              <F9> <esc>:NERDTreeToggle<cr>i
+imap              <F9> <esc>:NERDTreeToggle<cr>i
+map     <silent>  <F10> :wall<CR>:call FormatAll()<cr>:JSLintUpdate<cr>:cw<CR>
+" 
+" SuperTab like snippets behavior.
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
 
