@@ -165,6 +165,7 @@ nmap q: :q
 
 map               <F3> <Esc>:setlocal nospell<CR>
 nnoremap <silent> <F4> :YRShow<CR>
+nnoremap          <F5> :GundoToggle<CR>
 map               <F8> :BufExplorer<cr>
 nmap              <F9>      :NERDTreeToggle<cr>
 vmap              <F9> <esc>:NERDTreeToggle<cr>i
