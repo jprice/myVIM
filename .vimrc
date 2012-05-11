@@ -146,7 +146,7 @@ let loaded_matchparen = 1
 let g:NERDTreeWinSize=40
 let g:NERDTreeChristmasTree = 1
 let g:NERDTreeCaseSensitiveSort = 1
-let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeWinPos = 'left' "by default
 let g:NERDTreeShowBookmarks = 1
 
@@ -188,6 +188,7 @@ nmap              <F9>      :NERDTreeToggle<cr>
 vmap              <F9> <esc>:NERDTreeToggle<cr>i
 imap              <F9> <esc>:NERDTreeToggle<cr>i
 map     <silent>  <F10> :wall<CR>:call FormatAll()<cr>:JSLintUpdate<cr>:cw<CR>
+nmap    <silent>  <F12> :TagbarToggle<CR>
 " 
 " SuperTab like snippets behavior.
 imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
