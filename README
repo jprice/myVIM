@@ -1,0 +1,11 @@
+My vim files.
+
+Requirements:
+* Vim 7.3+
+* Python support for Vim
+* Python 2.4+
+* Exuberant ctags 5.5
+
+Installation:
+(OpenSuSE)
+sudo zypper in vim vim-data vim-python ctags
