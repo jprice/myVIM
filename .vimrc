@@ -60,7 +60,6 @@ set t_Co=256
 color lucius
 hi Normal           guifg=#e0e0e0           guibg=#202020
 hi Normal           ctermfg=253             ctermbg=16
-hi StatusLine guifg=White guibg=Blue gui=NONE ctermfg=White ctermbg=Blue
 
 "vertical/horizontal scroll off settings
 set scrolloff=3
@@ -116,18 +115,40 @@ if has("gui_running")
   set background=dark
 endif
 
+"
+" Highlighting settings
+"
+" PHP
+let g:php_smart_members = 1
+let g:php_alt_properties = 1
+let g:php_show_semicolon = 1
+let g:php_smart_semicolon = 1
+let g:php_folding = 0
+let g:php_html_in_strings = 1
+let g:php_parent_error_close = 1
+let g:php_parent_error_open = 1
+let g:php_no_shorttags = 1
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vars
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let javascript_fold=0
 let mapleader = ","
 let g:mapleader = ","
+" disable matchparens
+let loaded_matchparen = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 let g:NERDTreeWinSize=40
+let g:NERDTreeChristmasTree = 1
+let g:NERDTreeCaseSensitiveSort = 1
+let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeWinPos = 'left' "by default
+let g:NERDTreeShowBookmarks = 1
 
 " jslint
 let g:JSLintHighlightErrorLine = 0 " don't show error in the main window
@@ -159,10 +180,6 @@ command! Vimrc e ~/.vimrc
 command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
 
 " Key mappings
-"
-" q: sucks
-nmap q: :q
-
 map               <F3> <Esc>:setlocal nospell<CR>
 nnoremap <silent> <F4> :YRShow<CR>
 nnoremap          <F5> :GundoToggle<CR>
@@ -176,7 +193,28 @@ map     <silent>  <F10> :wall<CR>:call FormatAll()<cr>:JSLintUpdate<cr>:cw<CR>
 imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+"
+" Autocommands
+"
+augroup general 
+  autocmd!
+    " Source .vimrc on write
+    au BufWritePost .vimrc source ~/.vimrc
+      "and reload vim-powerline plugin after that
+       au BufWritePost .vimrc call Pl#Load()
 
+    " Save if focus lost
+    au BufLeave,FocusLost * silent! wall
+
+    au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+    au BufRead,BufNewFile /etc/nginx/* set ft=nginx 
+
+    " php syntax bug. 
+    "au BufRead *.php setlocal nocursorline
+
+    " Make .sh files executable on write
+    au BufWritePost *.sh silent !chmod a+x %
+augroup END
 
 if has("autocmd")
   " Restore cursor position
@@ -185,14 +223,9 @@ if has("autocmd")
     \   exe "normal! g`\"" |
     \ endif
     augroup php
-      autocmd BufRead *.php setlocal nocursorline
     augroup END
 endif
 
 " Enable filetype detection
 filetype plugin on
 filetype plugin indent on
-
-autocmd BufLeave,FocusLost * silent! wall
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-au BufRead,BufNewFile /etc/nginx/* set ft=nginx 
