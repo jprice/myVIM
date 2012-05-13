@@ -3,21 +3,27 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use Vim settings, rather then Vi settings (much better!). This must be first, because it changes other options as a side effect.
 set nocompatible
-" do incremental searching
+" Look ahead as search pattern is specified
 set incsearch
+" Ignore case
+set ignorecase
+"...unless uppercase letters used
+set smartcase
+"Highlight all matches
+"set hlsearch
 " don't wait ESC-sequences
 set ttimeoutlen=100
 " more commands history
 set history=100
 " ... and more undolevels
 set undolevels=2048
-" reread the changed files automatically
+" reload buffer when external changes detected
 set autoread
 " allow backspace in insert mode
 set backspace=2
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
- set mouse=a
+  set mouse=a
 endif
 " Open new window at the bottom
 set splitbelow
@@ -75,6 +81,7 @@ set laststatus=2
 set number
 " set indentation as previous line
 set autoindent
+" Turn on autoindenting of blocks
 set smartindent
 " Show name of buffer in terminal title
 set title
@@ -84,9 +91,6 @@ set nolazyredraw
 set showcmd
 " search and highlighting for brackets
 set showmatch
-" show brackets for HTML-tags
-"set hlsearch
-set ignorecase
 
 set matchpairs+=<:>
 " use wildmenu
@@ -97,20 +101,20 @@ set wrap
 " GUI
 " ---
 if has("gui_running")
-	" удалить всё меню в GUI
-	aunmenu *
-	" размеры окна при открытии
-	set lines=50 columns=120
-	" основные параметры отображения
-	set guioptions=aci
-	" использовать контекстное меню
-	"set mousemodel=popup
-	" разрешить фокусу прыгать за мышью между окнами
-	"set mousefocus
-	" не скрывать указатель при печати
-	"set nomousehide
-	" начинать обзор с каталога текущего буфера
-	"set browsedir=buffeset 
+  " удалить всё меню в GUI
+  aunmenu *
+  " размеры окна при открытии
+  set lines=50 columns=120
+  " основные параметры отображения
+  set guioptions=aci
+  " использовать контекстное меню
+  "set mousemodel=popup
+  " разрешить фокусу прыгать за мышью между окнами
+  "set mousefocus
+  " не скрывать указатель при печати
+  "set nomousehide
+  " начинать обзор с каталога текущего буфера
+  "set browsedir=buffeset 
   set guifont=Monospace\ 11
   set background=dark
 endif
@@ -194,37 +198,61 @@ nmap    <silent>  <F12> :TagbarToggle<CR>
 imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" Visual Block mode is far more useful that Visual mode (so swap the commands)...
+nnoremap v <C-V>
+nnoremap <C-V> v
+
+vnoremap v <C-V>
+vnoremap <C-V> v
+
+" Make vaa select the entire file...
+vmap aa VGo1G
+
+" When shifting, retain selection over multiple shifts
+vmap <expr> > KeepVisualSelection(">")
+vmap <expr> < KeepVisualSelection("<")
+
+" Use space to jump down a page (like browsers do)
+nnoremap <Space> <PageDown>
+
 "
 " Autocommands
 "
 augroup general 
   autocmd!
-    " Source .vimrc on write
-    au BufWritePost .vimrc source ~/.vimrc
-      "and reload vim-powerline plugin after that
-       au BufWritePost .vimrc call Pl#Load()
+  " Source .vimrc on write
+  au BufWritePost .vimrc source ~/.vimrc
+  "and reload vim-powerline plugin after that
+  au BufWritePost .vimrc call Pl#Load()
 
-    " Save if focus lost
-    au BufLeave,FocusLost * silent! wall
+  " Save if focus lost
+  au BufLeave,FocusLost * silent! wall
 
-    au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-    au BufRead,BufNewFile /etc/nginx/* set ft=nginx 
+  au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+  au BufRead,BufNewFile /etc/nginx/* set ft=nginx 
 
-    " php syntax bug. 
-    "au BufRead *.php setlocal nocursorline
+  " php syntax bug. 
+  "au BufRead *.php setlocal nocursorline
 
-    " Make .sh files executable on write
-    au BufWritePost *.sh silent !chmod a+x %
+  " Make .sh files executable on write
+  au BufWritePost *.sh silent !chmod a+x %
 augroup END
+"
+" reload .vimrc after saving
+augroup VimReload
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
 
 if has("autocmd")
   " Restore cursor position
   autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-    augroup php
-    augroup END
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
+  augroup php
+  augroup END
 endif
 
 " Enable filetype detection
