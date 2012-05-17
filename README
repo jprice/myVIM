@@ -9,3 +9,7 @@ Requirements:
 Installation:
 (OpenSuSE)
 sudo zypper in vim vim-data vim-python ctags
+
+and run: 
+. .vim/install.sh
+to install environment

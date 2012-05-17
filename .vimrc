@@ -1,11 +1,12 @@
-"
-"
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins repos
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
 " repos on github
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'einars/js-beautify'
@@ -176,6 +177,7 @@ let g:NERDTreeCaseSensitiveSort = 1
 let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeWinPos = 'left' "by default
 let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeDirArrows = 0
 
 " jslint
 let g:JSLintHighlightErrorLine = 0 " don't show error in the main window
@@ -186,17 +188,13 @@ call pathogen#infect()
 " ctrlp 
 set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
 
-" neocomplcache 
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_min_syntax_length = 3
-
 " yankring
 let g:yankring_manual_clipboard_check = 0
 let g:yankring_history_dir = expand('$HOME').'/.vim/backups'
 let g:yankring_history_file = '.yankring_history'
+let g:yankring_replace_n_pkey = '' " no cycle, bacause to long and
+let g:yankring_replace_n_nkey = '' " conflict with ctrlp plugin
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -207,23 +205,18 @@ command! Vimrc e ~/.vimrc
 command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
 
 " Key mappings
-map               <F3> <Esc>:setlocal nospell<CR>
 nnoremap <silent> <F4> :YRShow<CR>
 nnoremap          <F5> :GundoToggle<CR>
 map               <F8> :BufExplorer<cr>
 nmap              <F9>      :NERDTreeToggle<cr>
-vmap              <F9> <esc>:NERDTreeToggle<cr>i
-imap              <F9> <esc>:NERDTreeToggle<cr>i
-map     <silent>  <F10> :wall<CR>:call FormatAll()<cr>:JSLintUpdate<cr>:cw<CR>
-nmap    <silent>  <F12> :TagbarToggle<CR>
+vmap              <F9>  <esc>:NERDTreeToggle<cr>i
+imap              <F9>  <esc>:NERDTreeToggle<cr>i
+map      <silent> <F10> :wall<CR>:call FormatAll()<cr>:JSLintUpdate<cr>:cw<CR>
+nmap     <silent> <F12> :TagbarToggle<CR>
 
 " write as sudo
 cnoremap w!! w !sudo tee % >/dev/null
  
-" SuperTab like snippets behavior.
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-
 " Visual Block mode is far more useful that Visual mode (so swap the commands)...
 nnoremap v <C-V>
 nnoremap <C-V> v
@@ -257,7 +250,7 @@ augroup general
   au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
   au BufRead,BufNewFile /etc/nginx/* set ft=nginx 
 
-  " php syntax bug. 
+  " php syntax bug. Seems to be fixed by php-syntax settings
   "au BufRead *.php setlocal nocursorline
 
   " Make .sh files executable on write
