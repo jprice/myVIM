@@ -8,3 +8,6 @@ export NODE_PATH=$HOME/.vim/bundle/js-beautify:$NODE_PATH
 #symlinks
 ln -sfv ~/.vim/.vimrc ~/.vimrc
 ln -sfv ~/.vim/.jslintrc ~/.jslintrc
+
+# install vundle
+git clone git://github.com/gmarik/vundle.git .vim/bundle/vundle

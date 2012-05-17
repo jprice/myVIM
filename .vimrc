@@ -1,3 +1,26 @@
+"
+"
+"
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+" repos on github
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'einars/js-beautify'
+Bundle 'alexbel/jslint.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'godlygeek/tabular'
+Bundle 'kien/ctrlp.vim'
+Bundle 'ervandew/supertab'
+Bundle 'sjl/gundo.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/bufexplorer.zip'
+Bundle 'vim-scripts/nginx.vim'
+Bundle 'vim-scripts/YankRing.vim'
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General behaviour
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -193,7 +216,10 @@ vmap              <F9> <esc>:NERDTreeToggle<cr>i
 imap              <F9> <esc>:NERDTreeToggle<cr>i
 map     <silent>  <F10> :wall<CR>:call FormatAll()<cr>:JSLintUpdate<cr>:cw<CR>
 nmap    <silent>  <F12> :TagbarToggle<CR>
-" 
+
+" write as sudo
+cnoremap w!! w !sudo tee % >/dev/null
+ 
 " SuperTab like snippets behavior.
 imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"

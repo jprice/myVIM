@@ -4,3 +4,4 @@ backups/*
 *~
 .netrwhist
 beautify.settings
+bundle/*
