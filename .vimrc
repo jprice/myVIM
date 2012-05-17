@@ -12,6 +12,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'einars/js-beautify'
 Bundle 'alexbel/jslint.vim'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'ervandew/supertab'
@@ -194,6 +195,9 @@ let g:yankring_history_dir = expand('$HOME').'/.vim/backups'
 let g:yankring_history_file = '.yankring_history'
 let g:yankring_replace_n_pkey = '' " no cycle, bacause to long and
 let g:yankring_replace_n_nkey = '' " conflict with ctrlp plugin
+
+" EasyMotion
+let g:EasyMotion_leader_key = '<Leader>' " <Leader><Leader> by default
 
 
 
