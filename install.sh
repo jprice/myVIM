@@ -10,4 +10,6 @@ ln -sfv ~/.vim/.vimrc ~/.vimrc
 ln -sfv ~/.vim/.jslintrc ~/.jslintrc
 
 # install vundle
-git clone git://github.com/gmarik/vundle.git .vim/bundle/vundle
+git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+echo 'Done!'
