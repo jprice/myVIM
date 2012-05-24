@@ -188,9 +188,6 @@ let g:NERDTreeDirArrows = 0
 " jslint
 let g:JSLintHighlightErrorLine = 0 " don't show error in the main window
 
-" pathogen
-call pathogen#infect()
-
 " ctrlp 
 set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
 
