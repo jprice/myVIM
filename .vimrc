@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 Bundle 'einars/js-beautify'
 Bundle 'alexbel/jslint.vim'
 Bundle 'Lokaltog/vim-powerline'
@@ -171,6 +172,10 @@ let loaded_matchparen = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+let g:syntastic_javascript_checker = "jshint"
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
 " NERDTree
 let g:NERDTreeWinSize=40
 let g:NERDTreeChristmasTree = 1
@@ -215,7 +220,7 @@ map               <F8> :BufExplorer<cr>
 nmap              <F9>      :NERDTreeToggle<cr>
 vmap              <F9>  <esc>:NERDTreeToggle<cr>i
 imap              <F9>  <esc>:NERDTreeToggle<cr>i
-map      <silent> <F10> :wall<CR>:call FormatAll()<cr>:JSLintUpdate<cr>:cw<CR>
+map      <silent> <F10> :wall<CR>:call FormatAll()<CR> :w<CR>
 nmap     <silent> <F12> :TagbarToggle<CR>
 
 " write as sudo
