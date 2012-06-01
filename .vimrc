@@ -22,6 +22,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'vim-scripts/YankRing.vim'
+Bundle 'bitc/vim-bad-whitespace'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -74,7 +75,7 @@ set dir=~/.vim/swp
 
 " Filetypes and encoding
 " ----------------------
-" utf-8 by default 
+" utf-8 by default
 set encoding=utf-8
 " the order of enumeration encoding
 set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
@@ -86,7 +87,7 @@ set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
 syntax on
 
 set cursorline
-" more colors 
+" more colors
 set t_Co=256
 " colorscheme lucius
 color lucius
@@ -140,7 +141,7 @@ if has("gui_running")
   " не скрывать указатель при печати
   "set nomousehide
   " начинать обзор с каталога текущего буфера
-  "set browsedir=buffeset 
+  "set browsedir=buffeset
   set guifont=Monospace\ 11
   set background=dark
 endif
@@ -188,7 +189,7 @@ let g:NERDTreeDirArrows = 0
 " jslint
 let g:JSLintHighlightErrorLine = 0 " don't show error in the main window
 
-" ctrlp 
+" ctrlp
 set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
 
 " yankring
@@ -222,7 +223,7 @@ nmap     <silent> <F12> :TagbarToggle<CR>
 
 " write as sudo
 cnoremap w!! w !sudo tee % >/dev/null
- 
+
 " Visual Block mode is far more useful that Visual mode (so swap the commands)...
 nnoremap v <C-V>
 nnoremap <C-V> v
@@ -243,18 +244,21 @@ nnoremap <Space> <PageDown>
 "
 " Autocommands
 "
-augroup general 
+augroup general
   autocmd!
   " Source .vimrc on write
   au BufWritePost .vimrc source ~/.vimrc
   "and reload vim-powerline plugin after that
   au BufWritePost .vimrc call Pl#Load()
 
+  " remove unwated whitespaces writing to a file
+  au BufWritePre * silent! :EraseBadWhitespace
+
   " Save if focus lost
   au BufLeave,FocusLost * silent! wall
 
   au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
-  au BufRead,BufNewFile /etc/nginx/* set ft=nginx 
+  au BufRead,BufNewFile /etc/nginx/* set ft=nginx
 
   " php syntax bug. Seems to be fixed by php-syntax settings
   "au BufRead *.php setlocal nocursorline
