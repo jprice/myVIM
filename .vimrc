@@ -252,7 +252,7 @@ augroup general
   au BufWritePost .vimrc call Pl#Load()
 
   " remove unwated whitespaces writing to a file
-  au BufWritePre * silent! :EraseBadWhitespace
+  "au BufWritePre * silent! :EraseBadWhitespace
 
   " Save if focus lost
   au BufLeave,FocusLost * silent! wall
