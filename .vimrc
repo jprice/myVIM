@@ -6,23 +6,24 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 " repos on github
+Bundle 'bitc/vim-bad-whitespace'
+Bundle 'einars/js-beautify'
+Bundle 'ervandew/supertab'
+Bundle 'godlygeek/tabular'
+Bundle 'jshint/jshint'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'majutsushi/tagbar'
+Bundle 'mileszs/ack.vim'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'einars/js-beautify'
-Bundle 'jshint/jshint'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'godlygeek/tabular'
-Bundle 'kien/ctrlp.vim'
-Bundle 'ervandew/supertab'
 Bundle 'sjl/gundo.vim'
-Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'vim-scripts/YankRing.vim'
-Bundle 'bitc/vim-bad-whitespace'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -201,7 +202,6 @@ let g:yankring_replace_n_nkey = '' " conflict with ctrlp plugin
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<Leader>' " <Leader><Leader> by default
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
