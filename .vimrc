@@ -57,6 +57,8 @@ endif
 set splitbelow
 
 set clipboard=unnamed,exclude:cons\\\|linux
+" fix for russian keys
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 " Indent settings
 " ---------------
@@ -126,6 +128,7 @@ set wildmenu
 set wildcharm=<TAB>
 " переносить длинные строки
 set wrap
+
 " GUI
 " ---
 if has("gui_running")
@@ -170,6 +173,7 @@ let mapleader = ","
 let g:mapleader = ","
 " disable matchparens
 let loaded_matchparen = 1
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins settings
