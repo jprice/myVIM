@@ -208,7 +208,7 @@ let g:yankring_replace_n_nkey = '' " conflict with ctrlp plugin
 let g:EasyMotion_leader_key = '<Leader>' " <Leader><Leader> by default
 
 " Ack
-let g:ackprg="ack -Ha --nocolor --nogroup --column --smart-case --ignore-dir=vendor"
+let g:ackprg="ack -Ha --nocolor --nogroup --column --smart-case --ignore-dir=vendor --ignore-dir=log --ignore-dir=cache"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
