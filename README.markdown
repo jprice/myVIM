@@ -6,6 +6,7 @@
 * Exuberant ctags 5.5
 * NodeJS, NodeJS-jshint
 * ack (is a tool like grep)
+* jsonlint (optional for json validation)
 
 ### Installation (openSUSE):
 add repository to get NodeJS:

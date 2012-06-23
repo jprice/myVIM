@@ -266,6 +266,7 @@ augroup general
 
   au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
   au BufRead,BufNewFile /etc/nginx/* set ft=nginx
+  au BufRead,BufNewFile *.json set ft=json
 
   " php syntax bug. Seems to be fixed by php-syntax settings
   "au BufRead *.php setlocal nocursorline
@@ -287,7 +288,7 @@ if has("autocmd")
         \ if line("'\"") > 1 && line("'\"") <= line("$") |
         \   exe "normal! g`\"" |
         \ endif
-  augroup php
+  "augroup php
   augroup END
 endif
 
