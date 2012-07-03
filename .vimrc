@@ -267,6 +267,7 @@ augroup general
   au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
   au BufRead,BufNewFile /etc/nginx/* set ft=nginx
   au BufRead,BufNewFile *.json set ft=json
+  au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set ft=markdown
 
   " php syntax bug. Seems to be fixed by php-syntax settings
   "au BufRead *.php setlocal nocursorline
