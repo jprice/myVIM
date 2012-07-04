@@ -10,17 +10,20 @@ Bundle 'bitc/vim-bad-whitespace'
 Bundle 'einars/js-beautify'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
+Bundle 'janx/vim-rubytest'
 Bundle 'jshint/jshint'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mileszs/ack.vim'
+Bundle 'rson/vim-conque'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-rails'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'vim-scripts/YankRing.vim'
@@ -210,6 +213,16 @@ let g:EasyMotion_leader_key = '<Leader>' " <Leader><Leader> by default
 " Ack
 let g:ackprg="ack -Ha --nocolor --nogroup --column --smart-case --ignore-dir=vendor --ignore-dir=log --ignore-dir=cache"
 
+" ConqueTerm
+let g:ConqueTerm_ToggleKey = ''
+let g:ConqueTerm_ReadUnfocused = 1
+
+" vim-rubytests
+let g:rubytest_in_quickfix = 1
+map <F3> <Plug>RubyTestRun
+map <Leader>] <Plug>RubyFileRun
+map <Leader>/ <Plug>RubyTestRunLast
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands and mappings
@@ -227,6 +240,7 @@ vmap              <F9>  <esc>:NERDTreeToggle<cr>i
 imap              <F9>  <esc>:NERDTreeToggle<cr>i
 map      <silent> <F10> :wall<CR>:call FormatAll()<CR> :w<CR>
 nmap     <silent> <F12> :TagbarToggle<CR>
+
 
 " write as sudo
 cnoremap w!! w !sudo tee % >/dev/null
@@ -268,6 +282,9 @@ augroup general
   au BufRead,BufNewFile /etc/nginx/* set ft=nginx
   au BufRead,BufNewFile *.json set ft=json
   au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set ft=markdown
+
+  " FIXME: disable plagin into conque term
+  au BufRead bash* let b:bad_whitespace_show = 0
 
   " php syntax bug. Seems to be fixed by php-syntax settings
   "au BufRead *.php setlocal nocursorline
