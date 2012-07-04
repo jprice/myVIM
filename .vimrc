@@ -220,7 +220,9 @@ let g:ConqueTerm_ReadUnfocused = 1
 
 " vim-rubytests
 let g:rubytest_in_quickfix = 1
-map <F3> <Plug>RubyTestRun
+let g:rubytest_cmd_feature = "bundle exec cucumber %p"
+let g:rubytest_cmd_story = "bundle exec cucumber %p -n '%c'"
+map <F3>      <Plug>RubyTestRun
 map <Leader>] <Plug>RubyFileRun
 map <Leader>/ <Plug>RubyTestRunLast
 
