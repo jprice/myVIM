@@ -25,6 +25,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'vim-scripts/YankRing.vim'
@@ -243,7 +244,6 @@ vmap              <F9>  <esc>:NERDTreeToggle<cr>i
 imap              <F9>  <esc>:NERDTreeToggle<cr>i
 map      <silent> <F10> :wall<CR>:call FormatAll()<CR> :w<CR>
 nmap     <silent> <F12> :TagbarToggle<CR>
-
 
 " write as sudo
 cnoremap w!! w !sudo tee % >/dev/null
