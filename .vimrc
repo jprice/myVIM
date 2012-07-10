@@ -101,6 +101,7 @@ set t_Co=256
 color lucius
 hi Normal           guifg=#e0e0e0           guibg=#202020
 hi Normal           ctermfg=253             ctermbg=16
+hi CursorLineNr     ctermfg=253             ctermbg=237
 
 "vertical/horizontal scroll off settings
 set scrolloff=3
@@ -113,7 +114,9 @@ set laststatus=2
 " show non-printing characters
 "set list listchars=tab:··,trail:·,extends:»,precedes:«
 
+" show line numbers
 set number
+set numberwidth=3
 " set indentation as previous line
 set autoindent
 " Turn on autoindenting of blocks
@@ -286,8 +289,8 @@ augroup general
   au BufRead,BufNewFile *.json set ft=json
   au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set ft=markdown
 
-  " FIXME: disable plagin into conque term
-  au BufRead bash* let b:bad_whitespace_show = 0
+  " FIXME: disable plugin into conque term
+  au BufwinEnter bash* let b:bad_whitespace_show = 0
 
   " php syntax bug. Seems to be fixed by php-syntax settings
   "au BufRead *.php setlocal nocursorline
