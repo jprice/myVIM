@@ -290,8 +290,8 @@ augroup general
   au BufRead,BufNewFile *.json set ft=json
   au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set ft=markdown
 
-  " FIXME: disable plugin into conque term
-  au BufwinEnter bash* let b:bad_whitespace_show = 0
+  au BufwinEnter,BufReadPost bash* let b:bad_whitespace_show = 0
+  au BufwinEnter bash* set nocursorline
 
   " php syntax bug. Seems to be fixed by php-syntax settings
   "au BufRead *.php setlocal nocursorline
