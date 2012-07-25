@@ -206,9 +206,6 @@ let g:NERDTreeWinPos = 'left' "by default
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeDirArrows = 0
 
-" jslint
-let g:JSLintHighlightErrorLine = 0 " don't show error in the main window
-
 " ctrlp
 set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
 
