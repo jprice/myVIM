@@ -35,6 +35,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/nginx.vim'
+Bundle 'vim-scripts/vimwiki'
 Bundle 'vim-scripts/YankRing.vim'
 
 
