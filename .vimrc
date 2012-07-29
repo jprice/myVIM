@@ -7,6 +7,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " repos on github
 Bundle 'bitc/vim-bad-whitespace'
+Bundle 'chrisbra/NrrwRgn'
 Bundle 'einars/js-beautify'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
@@ -17,6 +18,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'rson/vim-conque'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -33,7 +36,6 @@ Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'vim-scripts/YankRing.vim'
-Bundle 'chrisbra/NrrwRgn'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -234,6 +236,10 @@ let g:rubytest_cmd_story = "bundle exec cucumber %p -n '%c'"
 map <F3>      <Plug>RubyTestRun
 map <Leader>] <Plug>RubyFileRun
 map <Leader>/ <Plug>RubyTestRunLast
+
+" gist-vim
+let g:gist_clip_command = 'xclip -selection clipboard'
+let g:gist_post_private = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
