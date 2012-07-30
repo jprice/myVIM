@@ -306,24 +306,17 @@ augroup general
 
   " Make .sh files executable on write
   au BufWritePost *.sh silent !chmod a+x %
-augroup END
-"
-" reload .vimrc after saving
-augroup VimReload
-  autocmd!
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END
 
-
-if has("autocmd")
   " Restore cursor position
-  autocmd BufReadPost *
-        \ if line("'\"") > 1 && line("'\"") <= line("$") |
-        \   exe "normal! g`\"" |
-        \ endif
-  "augroup php
-  augroup END
-endif
+  au BufReadPost *   if line("'\"") > 1 && line("'\"") <= line("$") |
+                   \   exe "normal! g`\"" |
+                   \ endif
+
+  " reload .vimrc after saving
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+augroup END
+
 
 " Enable filetype detection
 filetype plugin on
