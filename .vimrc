@@ -217,9 +217,6 @@ let g:yankring_history_file = '.yankring_history'
 let g:yankring_replace_n_pkey = '' " no cycle, bacause to long and
 let g:yankring_replace_n_nkey = '' " conflict with ctrlp plugin
 
-" EasyMotion
-let g:EasyMotion_leader_key = '<Leader>' " <Leader><Leader> by default
-
 " Ack
 let g:ackprg="ack -Ha --nocolor --nogroup --column --smart-case --ignore-dir=vendor --ignore-dir=log --ignore-dir=cache"
 
