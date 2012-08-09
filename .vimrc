@@ -142,29 +142,8 @@ set matchpairs+=<:>
 " use wildmenu
 set wildmenu
 set wildcharm=<TAB>
-" переносить длинные строки
+" wrap long lines
 set wrap
-
-" GUI
-" ---
-if has("gui_running")
-  " удалить всё меню в GUI
-  aunmenu *
-  " размеры окна при открытии
-  set lines=50 columns=120
-  " основные параметры отображения
-  set guioptions=aci
-  " использовать контекстное меню
-  "set mousemodel=popup
-  " разрешить фокусу прыгать за мышью между окнами
-  "set mousefocus
-  " не скрывать указатель при печати
-  "set nomousehide
-  " начинать обзор с каталога текущего буфера
-  "set browsedir=buffeset
-  set guifont=Monospace\ 11
-  set background=dark
-endif
 
 "
 " Highlighting settings
@@ -198,6 +177,7 @@ let loaded_matchparen = 1
 let g:syntastic_javascript_checker = "jshint"
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
 " NERDTree
 let g:NERDTreeWinSize=40
 let g:NERDTreeChristmasTree = 1
