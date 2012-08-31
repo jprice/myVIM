@@ -216,6 +216,9 @@ map <Leader>/ <Plug>RubyTestRunLast
 let g:gist_clip_command = 'xclip -selection clipboard'
 let g:gist_post_private = 1
 
+" vimwiki
+let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands and mappings
