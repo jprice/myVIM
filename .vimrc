@@ -177,7 +177,7 @@ let loaded_matchparen = 1
 let g:syntastic_javascript_checker = "jshint"
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=5
+let g:syntastic_loc_list_height=3
 " NERDTree
 let g:NERDTreeWinSize=40
 let g:NERDTreeChristmasTree = 1
