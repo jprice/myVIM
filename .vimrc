@@ -85,8 +85,8 @@ set expandtab
 " Backup and swap settings
 " -----------------------
 set backup
-set backupdir=~/.vim/backups
-set dir=~/.vim/swp
+set backupdir=~/tmp,/tmp " store backups
+set dir=~/tmp,/tmp       " files in RAM
 
 
 " Filetypes and encoding
@@ -192,7 +192,7 @@ set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
 
 " yankring
 let g:yankring_manual_clipboard_check = 0
-let g:yankring_history_dir = expand('$HOME').'/.vim/backups'
+let g:yankring_history_dir = expand('$HOME').'/tmp' " store history in RAM
 let g:yankring_history_file = '.yankring_history'
 let g:yankring_replace_n_pkey = '' " no cycle, bacause to long and
 let g:yankring_replace_n_nkey = '' " conflict with ctrlp plugin
