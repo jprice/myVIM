@@ -22,4 +22,9 @@ and run:
 
     . .vim/install.sh
 
-to install environment
+to install environment.
+Then open vim and install plugins
+
+
+    :BundleInstall
+
