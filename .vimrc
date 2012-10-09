@@ -14,6 +14,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'janx/vim-rubytest'
 Bundle 'jmcantrell/vim-spacepaste'
 Bundle 'jshint/jshint'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
@@ -179,6 +180,7 @@ let g:syntastic_javascript_checker = "jshint"
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=3
+let g:syntastic_csslint_options = "--errors=empty-rules,duplicate-properties,floats --warnings=display-property-grouping,qualified-headings,zero-units,vendor-prefix,gradients"
 " NERDTree
 let g:NERDTreeWinSize=40
 let g:NERDTreeChristmasTree = 1
@@ -275,6 +277,7 @@ augroup general
   au BufLeave,FocusLost * silent! wall
 
   au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+  au BufRead,BufNewFile *.coffee set ft=coffee syntax=coffee
   au BufRead,BufNewFile /etc/nginx/* set ft=nginx
   au BufRead,BufNewFile *.json set ft=json
   au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set ft=markdown

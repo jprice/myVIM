@@ -4,16 +4,22 @@
 * Vim 7.3+
 * Python support for Vim, Python 2.4+
 * Exuberant ctags 5.5
-* NodeJS, NodeJS-jshint
-* ack (is a tool like grep)
-* jsonlint (optional for json validation)
+* NodeJS, npm (to install csslint,jsonlint,jshint)
+* ack
+* csslint
+* jshint
+* jsonlint
 
 ### Installation (openSUSE):
 add repository to get NodeJS:
 
     sudo zypper ar -f http://download.opensuse.org/repositories/devel:/languages:/nodejs/openSUSE_Tumbleweed NodeJS
 
-    sudo zypper in vim vim-data vim-python ctags nodejs nodejs-jshint nodejs-lrucache ack
+    sudo zypper in vim vim-data vim-python ctags nodejs nodejs-lrucache ack
+
+    npm install jshint -g
+    npm install jsonlint -g
+    npm install csslint -g
 
 Another distributives:
 You should install these packages via your favorite package manager or install from source code
