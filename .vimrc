@@ -12,7 +12,6 @@ Bundle 'einars/js-beautify'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'janx/vim-rubytest'
-Bundle 'jmcantrell/vim-spacepaste'
 Bundle 'jshint/jshint'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -20,8 +19,8 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'rson/vim-conque'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
@@ -222,6 +221,13 @@ let g:gist_post_private = 1
 " vimwiki
 let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 
+" vim-indent-guides  shortcut: <Leader>ig
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=237
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands and mappings
@@ -249,6 +255,12 @@ nnoremap <C-V> v
 
 vnoremap v <C-V>
 vnoremap <C-V> v
+
+" resize window CTRL+(h|j|k|l)
+noremap <C-j> :resize +1<CR>
+noremap <C-k> :resize -1<CR>
+noremap <C-h> :vertical resize -1<CR>
+noremap <C-l> :vertical resize +1<CR>
 
 " Make vaa select the entire file...
 vmap aa VGo1G
