@@ -246,6 +246,10 @@ imap              <F9>  <esc>:NERDTreeToggle<cr>i
 map      <silent> <F10> :wall<CR>:call FormatAll()<CR> :w<CR>
 nmap     <silent> <F12> :TagbarToggle<CR>
 
+" remap surround key mapprings
+nmap ts csw'
+nmap td csw"
+
 " write as sudo
 cnoremap w!! w !sudo tee % >/dev/null
 
