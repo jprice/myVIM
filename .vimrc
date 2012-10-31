@@ -11,6 +11,7 @@ Bundle 'chrisbra/NrrwRgn'
 Bundle 'einars/js-beautify'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
+Bundle 'int3/vim-extradite'
 Bundle 'janx/vim-rubytest'
 Bundle 'jshint/jshint'
 Bundle 'kchmck/vim-coffee-script'
@@ -35,6 +36,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/bufexplorer.zip'
 Bundle 'vim-scripts/IndexedSearch'
+Bundle 'vim-scripts/JSON.vim'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'vim-scripts/vimwiki'
 Bundle 'vim-scripts/YankRing.vim'
@@ -179,7 +181,7 @@ let g:syntastic_javascript_checker = "jshint"
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=3
-let g:syntastic_csslint_options = "--errors=empty-rules,duplicate-properties,floats --warnings=display-property-grouping,qualified-headings,zero-units,vendor-prefix,gradients"
+let g:syntastic_csslint_options = "--errors=empty-rules,duplicate-properties,floats --warnings=display-property-grouping,zero-units,vendor-prefix,gradients"
 " NERDTree
 let g:NERDTreeWinSize=40
 let g:NERDTreeChristmasTree = 1
@@ -227,6 +229,9 @@ let g:indent_guides_guide_size = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=235
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=237
 
+" extradit.vim
+map <F2> :Extradit<CR>
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -247,6 +252,7 @@ map      <silent> <F10> :wall<CR>:call FormatAll()<CR> :w<CR>
 nmap     <silent> <F12> :TagbarToggle<CR>
 
 " remap surround key mapprings
+" t+s(ingle) quotes, t+d(ouble) quotes
 nmap ts csw'
 nmap td csw"
 
