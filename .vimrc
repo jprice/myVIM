@@ -253,8 +253,8 @@ nmap     <silent> <F12> :TagbarToggle<CR>
 
 " remap surround key mapprings
 " t+s(ingle) quotes, t+d(ouble) quotes
-nmap ts csw'
-nmap td csw"
+nmap ts csw'El
+nmap td csw"El
 
 " write as sudo
 cnoremap w!! w !sudo tee % >/dev/null
