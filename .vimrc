@@ -22,6 +22,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'mattn/gist-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'pangloss/vim-javascript'
 Bundle 'rson/vim-conque'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
@@ -174,7 +175,7 @@ let loaded_matchparen = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins settings
+" Plugins settings and plugins mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 let g:syntastic_javascript_checker = "jshint"
