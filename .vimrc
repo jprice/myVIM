@@ -8,7 +8,7 @@ Bundle 'gmarik/vundle'
 " repos on github
 Bundle 'bitc/vim-bad-whitespace'
 Bundle 'chrisbra/NrrwRgn'
-Bundle 'einars/js-beautify'
+"Bundle 'einars/js-beautify'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'int3/vim-extradite'
@@ -25,6 +25,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rson/vim-conque'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'Rykka/trans.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
@@ -177,12 +178,14 @@ let loaded_matchparen = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins settings and plugins mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Syntastic
 let g:syntastic_javascript_checker = "jshint"
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=3
 let g:syntastic_csslint_options = "--errors=empty-rules,duplicate-properties,floats --warnings=display-property-grouping,zero-units,vendor-prefix,gradients"
+
 " NERDTree
 let g:NERDTreeWinSize=40
 let g:NERDTreeChristmasTree = 1
@@ -233,6 +236,9 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=237
 " extradit.vim
 map <F2> :Extradit<CR>
 
+" Trans.vim
+let g:trans_default_lang = 'ru'
+"let g:trans_map_trans = '<leader>tt'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -251,6 +257,10 @@ vmap              <F9>  <esc>:NERDTreeToggle<cr>i
 imap              <F9>  <esc>:NERDTreeToggle<cr>i
 map      <silent> <F10> :wall<CR>:call FormatAll()<CR> :w<CR>
 nmap     <silent> <F12> :TagbarToggle<CR>
+
+
+" switch to the last file
+nnoremap <leader>l <c-^>
 
 " remap surround key mapprings
 " t+s(ingle) quotes, t+d(ouble) quotes
@@ -280,8 +290,6 @@ vmap aa VGo1G
 vmap <expr> > KeepVisualSelection(">")
 vmap <expr> < KeepVisualSelection("<")
 
-" Use space to jump down a page (like browsers do)
-nnoremap <Space> <PageDown>
 
 "
 " Autocommands
