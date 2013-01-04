@@ -6,11 +6,13 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 " repos on github
+Bundle 'alexbel/YankRing.vim'
 Bundle 'bitc/vim-bad-whitespace'
 Bundle 'chrisbra/NrrwRgn'
 "Bundle 'einars/js-beautify'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
+Bundle 'gorkunov/smartpairs.vim'
 Bundle 'int3/vim-extradite'
 Bundle 'janx/vim-rubytest'
 Bundle 'jshint/jshint'
@@ -30,6 +32,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
+Bundle 'szw/vim-dict'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -41,13 +44,13 @@ Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/JSON.vim'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'vim-scripts/vimwiki'
-Bundle 'vim-scripts/YankRing.vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General behaviour
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use Vim settings, rather then Vi settings (much better!). This must be first, because it changes other options as a side effect.
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
 set nocompatible
 " Look ahead as search pattern is specified
 set incsearch
@@ -200,7 +203,7 @@ set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
 
 " yankring
 let g:yankring_manual_clipboard_check = 0
-let g:yankring_history_dir = expand('$HOME').'/tmp' " store history in RAM
+let g:yankring_history_dir = '~/tmp,/tmp,/var/tmp' " store history in RAM
 let g:yankring_history_file = '.yankring_history'
 let g:yankring_replace_n_pkey = '' " no cycle, bacause to long and
 let g:yankring_replace_n_nkey = '' " conflict with ctrlp plugin
@@ -213,12 +216,14 @@ let g:ConqueTerm_ToggleKey = ''
 let g:ConqueTerm_ReadUnfocused = 1
 
 " vim-rubytests
-let g:rubytest_in_quickfix = 1
+let g:rubytest_in_quickfix = 0
+let g:rubytest_cmd_test = "bundle exec ruby -Itest %p"
+let g:rubytest_cmd_testcase = "bundle exec ruby -Itest %p -n '/%c/'"
 let g:rubytest_cmd_feature = "bundle exec cucumber %p"
 let g:rubytest_cmd_story = "bundle exec cucumber %p -n '%c'"
-map <F3>      <Plug>RubyTestRun
-map <Leader>] <Plug>RubyFileRun
-map <Leader>/ <Plug>RubyTestRunLast
+"map <F3>      <Plug>RubyTestRun
+map <F3> <Plug>RubyFileRun
+"map <Leader>/ <Plug>RubyTestRunLast
 
 " gist-vim
 let g:gist_clip_command = 'xclip -selection clipboard'
@@ -260,7 +265,7 @@ nmap     <silent> <F12> :TagbarToggle<CR>
 
 
 " switch to the last file
-nnoremap <leader>l <c-^>
+nnoremap <leader><leader>l <c-^>
 
 " remap surround key mapprings
 " t+s(ingle) quotes, t+d(ouble) quotes
