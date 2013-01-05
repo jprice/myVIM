@@ -33,6 +33,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'szw/vim-dict'
+Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -91,7 +92,7 @@ set softtabstop=2
 set expandtab
 
 " Backup and swap settings
-" -----------------------
+" ------------------------
 set backup
 set backupdir=~/tmp,/tmp " store backups
 set dir=~/tmp,/tmp       " files in RAM
@@ -157,23 +158,23 @@ set wrap
 " Highlighting settings
 "
 " PHP
-let g:php_smart_members = 1
-let g:php_alt_properties = 1
-let g:php_show_semicolon = 1
-let g:php_smart_semicolon = 1
-let g:php_folding = 0
-let g:php_html_in_strings = 1
+let g:php_smart_members      = 1
+let g:php_alt_properties     = 1
+let g:php_show_semicolon     = 1
+let g:php_smart_semicolon    = 1
+let g:php_folding            = 0
+let g:php_html_in_strings    = 1
 let g:php_parent_error_close = 1
-let g:php_parent_error_open = 1
-let g:php_no_shorttags = 1
+let g:php_parent_error_open  = 1
+let g:php_no_shorttags       = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vars
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let javascript_fold=0
-let mapleader = ","
-let g:mapleader = ","
+let javascript_fold = 0
+let mapleader       = ","
+let g:mapleader     = ","
 " disable matchparens
 let loaded_matchparen = 1
 
@@ -184,43 +185,44 @@ let loaded_matchparen = 1
 
 " Syntastic
 let g:syntastic_javascript_checker = "jshint"
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=3
-let g:syntastic_csslint_options = "--errors=empty-rules,duplicate-properties,floats --warnings=display-property-grouping,zero-units,vendor-prefix,gradients"
+let g:syntastic_enable_signs       = 1
+let g:syntastic_auto_loc_list      = 1
+let g:syntastic_loc_list_height    = 3
+let g:syntastic_csslint_options    = "--errors = empty-rules,duplicate-properties,floats --warnings = display-property-grouping,zero-units,vendor-prefix,gradients"
 
 " NERDTree
-let g:NERDTreeWinSize=40
-let g:NERDTreeChristmasTree = 1
+let g:NERDTreeWinSize           = 40
+let g:NERDTreeChristmasTree     = 1
 let g:NERDTreeCaseSensitiveSort = 1
-let g:NERDTreeQuitOnOpen = 0
-let g:NERDTreeWinPos = 'left' "by default
-let g:NERDTreeShowBookmarks = 1
-let g:NERDTreeDirArrows = 0
+let g:NERDTreeQuitOnOpen        = 0
+let g:NERDTreeWinPos            = 'left' "by default
+let g:NERDTreeShowBookmarks     = 1
+let g:NERDTreeDirArrows         = 0
 
 " ctrlp
 set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
 
 " yankring
 let g:yankring_manual_clipboard_check = 0
-let g:yankring_history_dir = '~/tmp,/tmp,/var/tmp' " store history in RAM
-let g:yankring_history_file = '.yankring_history'
+let g:yankring_history_dir    = '~/tmp,/tmp,/var/tmp' " store history in RAM
+let g:yankring_history_file   = '.yankring_history'
 let g:yankring_replace_n_pkey = '' " no cycle, bacause to long and
 let g:yankring_replace_n_nkey = '' " conflict with ctrlp plugin
+nnoremap <silent> <F4> :YRShow<CR>
 
 " Ack
-let g:ackprg="ack -Ha --nocolor --nogroup --column --smart-case --ignore-dir=vendor --ignore-dir=log --ignore-dir=cache"
+let g:ackprg = "ack -Ha --nocolor --nogroup --column --smart-case --ignore-dir=vendor --ignore-dir=log --ignore-dir=cache"
 
 " ConqueTerm
-let g:ConqueTerm_ToggleKey = ''
+let g:ConqueTerm_ToggleKey     = ''
 let g:ConqueTerm_ReadUnfocused = 1
 
 " vim-rubytests
-let g:rubytest_in_quickfix = 0
-let g:rubytest_cmd_test = "bundle exec ruby -Itest %p"
+let g:rubytest_in_quickfix  = 0
+let g:rubytest_cmd_test     = "bundle exec ruby -Itest %p"
 let g:rubytest_cmd_testcase = "bundle exec ruby -Itest %p -n '/%c/'"
-let g:rubytest_cmd_feature = "bundle exec cucumber %p"
-let g:rubytest_cmd_story = "bundle exec cucumber %p -n '%c'"
+let g:rubytest_cmd_feature  = "bundle exec cucumber %p"
+let g:rubytest_cmd_story    = "bundle exec cucumber %p -n '%c'"
 "map <F3>      <Plug>RubyTestRun
 map <F3> <Plug>RubyFileRun
 "map <Leader>/ <Plug>RubyTestRunLast
@@ -234,7 +236,7 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 
 " vim-indent-guides  shortcut: <Leader>ig
 let g:indent_guides_auto_colors = 0
-let g:indent_guides_guide_size = 1
+let g:indent_guides_guide_size  = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=235
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=237
 
@@ -254,10 +256,9 @@ command! Vimrc e ~/.vimrc
 command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
 
 " Key mappings
-nnoremap <silent> <F4> :YRShow<CR>
 nnoremap          <F5> :GundoToggle<CR>
 map               <F8> :BufExplorer<cr>
-nmap              <F9>      :NERDTreeToggle<cr>
+nmap              <F9>       :NERDTreeToggle<cr>
 vmap              <F9>  <esc>:NERDTreeToggle<cr>i
 imap              <F9>  <esc>:NERDTreeToggle<cr>i
 map      <silent> <F10> :wall<CR>:call FormatAll()<CR> :w<CR>
