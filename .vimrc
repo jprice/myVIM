@@ -34,7 +34,6 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'szw/vim-dict'
 Bundle 'Townk/vim-autoclose'
-Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -246,6 +245,9 @@ map <F2> :Extradit<CR>
 " Trans.vim
 let g:trans_default_lang = 'ru'
 "let g:trans_map_trans = '<leader>tt'
+
+" AutoClose
+let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'}
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
