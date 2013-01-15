@@ -22,6 +22,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'pangloss/vim-javascript'
@@ -33,7 +34,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'szw/vim-dict'
-Bundle 'Townk/vim-autoclose'
+"Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -249,6 +250,15 @@ let g:trans_default_lang = 'ru'
 " AutoClose
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'}
 
+" Surround
+" remap surround key mapprings
+" t+s(ingle) quotes, t+d(ouble) quotes
+nmap ts csw'El
+nmap td csw"El
+nmap <leader>- yss-
+nmap <leader>= yss=
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands and mappings
@@ -269,11 +279,6 @@ nmap     <silent> <F12> :TagbarToggle<CR>
 
 " switch to the last file
 nnoremap <leader><leader>l <c-^>
-
-" remap surround key mapprings
-" t+s(ingle) quotes, t+d(ouble) quotes
-nmap ts csw'El
-nmap td csw"El
 
 " write as sudo
 cnoremap w!! w !sudo tee % >/dev/null
