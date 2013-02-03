@@ -10,12 +10,13 @@ Bundle 'alexbel/YankRing.vim'
 Bundle 'bitc/vim-bad-whitespace'
 Bundle 'chrisbra/NrrwRgn'
 "Bundle 'einars/js-beautify'
-Bundle 'ervandew/supertab'
+Bundle 'ervbndew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'gorkunov/smartpairs.vim'
 Bundle 'int3/vim-extradite'
 Bundle 'janx/vim-rubytest'
 Bundle 'jshint/jshint'
+Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
@@ -185,10 +186,11 @@ let loaded_matchparen = 1
 
 " Syntastic
 let g:syntastic_javascript_checker = "jshint"
-let g:syntastic_enable_signs       = 1
 let g:syntastic_auto_loc_list      = 1
 let g:syntastic_loc_list_height    = 3
-let g:syntastic_csslint_options    = "--errors = empty-rules,duplicate-properties,floats --warnings = display-property-grouping,zero-units,vendor-prefix,gradients"
+let g:syntastic_csslint_options    ="--ignore=adjoining-classes,floats,font-faces,shorthand,font-sizes,regex-selectors,important"
+" syntastic can't find right rvm version of ruby
+let g:syntastic_ruby_exec = $HOME.'/.rvm/bin/ruby-1.9.3-p374'
 
 " NERDTree
 let g:NERDTreeWinSize           = 40
@@ -245,7 +247,7 @@ map <F2> :Extradit<CR>
 
 " Trans.vim
 let g:trans_default_lang = 'ru'
-"let g:trans_map_trans = '<leader>tt'
+"let g:trans_map_trans = '<leader>tt' by default
 
 " AutoClose
 let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'}
