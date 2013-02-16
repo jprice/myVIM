@@ -34,6 +34,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
+Bundle 'sunaku/vim-ruby-minitest'
 Bundle 'szw/vim-dict'
 "Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-endwise'
@@ -221,13 +222,13 @@ let g:ConqueTerm_ReadUnfocused = 1
 
 " vim-rubytests
 let g:rubytest_in_quickfix  = 0
-let g:rubytest_cmd_test     = "bundle exec ruby -Itest %p"
-let g:rubytest_cmd_testcase = "bundle exec ruby -Itest %p -n '/%c/'"
+let g:rubytest_cmd_test     = "turn -Itest %p"
+let g:rubytest_cmd_testcase = "turn -Itest %p -n /%c/"
 let g:rubytest_cmd_feature  = "bundle exec cucumber %p"
 let g:rubytest_cmd_story    = "bundle exec cucumber %p -n '%c'"
-"map <F3>      <Plug>RubyTestRun
-map <F3> <Plug>RubyFileRun
-"map <Leader>/ <Plug>RubyTestRunLast
+
+map <F3>      <Plug>RubyTestRun
+map <Leader>t <Plug>RubyFileRun
 
 " gist-vim
 let g:gist_clip_command = 'xclip -selection clipboard'
