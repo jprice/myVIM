@@ -215,6 +215,8 @@ nnoremap <silent> <F4> :YRShow<CR>
 
 " Ack
 let g:ackprg = "ack -Ha --nocolor --nogroup --column --smart-case --ignore-dir=vendor --ignore-dir=log --ignore-dir=cache"
+" grep word under cursor in current directory
+nnoremap <Leader>vv :Ack <cword><cr>
 
 " ConqueTerm
 let g:ConqueTerm_ToggleKey     = ''
@@ -305,7 +307,6 @@ vmap aa VGo1G
 " When shifting, retain selection over multiple shifts
 vmap <expr> > KeepVisualSelection(">")
 vmap <expr> < KeepVisualSelection("<")
-
 
 "
 " Autocommands
