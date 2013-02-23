@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 Bundle 'alexbel/YankRing.vim'
 Bundle 'bitc/vim-bad-whitespace'
 Bundle 'chrisbra/NrrwRgn'
+Bundle 'duff/vim-scratch'
 "Bundle 'einars/js-beautify'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
@@ -319,9 +320,6 @@ augroup general
   "and reload vim-powerline plugin after that
   au BufWritePost .vimrc call Pl#Load()
 
-  " remove unwated whitespaces writing to a file
-  "au BufWritePre * silent! :EraseBadWhitespace
-
   " Save if focus lost
   au BufLeave,FocusLost * silent! wall
 
@@ -333,9 +331,6 @@ augroup general
 
   au BufwinEnter,BufReadPost bash* let b:bad_whitespace_show = 0
   au BufwinEnter bash* set nocursorline
-
-  " php syntax bug. Seems to be fixed by php-syntax settings
-  "au BufRead *.php setlocal nocursorline
 
   " Make .sh files executable on write
   au BufWritePost *.sh silent !chmod a+x %
