@@ -10,14 +10,13 @@ Bundle 'alexbel/YankRing.vim'
 Bundle 'bitc/vim-bad-whitespace'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'duff/vim-scratch'
-"Bundle 'einars/js-beautify'
+Bundle 'einars/js-beautify'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'gorkunov/smartpairs.vim'
 Bundle 'gregsexton/MatchTag'
 Bundle 'int3/vim-extradite'
 Bundle 'janx/vim-rubytest'
-Bundle 'jshint/jshint'
 Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -38,6 +37,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'sunaku/vim-ruby-minitest'
 Bundle 'szw/vim-dict'
+Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -146,6 +146,7 @@ set smartindent
 set title
 
 set nolazyredraw
+
 " show incomplete cmds down the bottom
 set showcmd
 " search and highlighting for brackets
@@ -226,7 +227,7 @@ let g:ConqueTerm_ReadUnfocused = 1
 
 " vim-rubytests
 let g:rubytest_in_quickfix  = 0
-let g:rubytest_cmd_test     = "turn -Itest %p"
+let g:rubytest_cmd_test     = "spring test %p"
 let g:rubytest_cmd_testcase = "turn -Itest %p -n /%c/"
 let g:rubytest_cmd_feature  = "bundle exec cucumber %p"
 let g:rubytest_cmd_story    = "bundle exec cucumber %p -n '%c'"
