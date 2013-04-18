@@ -182,6 +182,8 @@ let mapleader       = ","
 let g:mapleader     = ","
 " disable matchparens
 let loaded_matchparen = 1
+" disable underline, bold, italic styling for html files
+let html_no_rendering = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -242,12 +244,6 @@ let g:gist_post_private = 1
 " vimwiki
 let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 
-" vim-indent-guides  shortcut: <Leader>ig
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_guide_size  = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=235
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=237
-
 " extradit.vim
 map <F2> :Extradit<CR>
 
@@ -266,6 +262,8 @@ nmap td csw"El
 nmap <leader>- yss-
 nmap <leader>= yss=
 
+" indentLine
+let g:indentLine_color_term = 236
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
