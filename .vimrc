@@ -14,6 +14,7 @@ Bundle 'einars/js-beautify'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'gorkunov/smartpairs.vim'
+Bundle 'gregsexton/gitv'
 Bundle 'gregsexton/MatchTag'
 Bundle 'int3/vim-extradite'
 Bundle 'janx/vim-rubytest'
@@ -229,7 +230,7 @@ let g:ConqueTerm_ReadUnfocused = 1
 
 " vim-rubytests
 let g:rubytest_in_quickfix  = 0
-let g:rubytest_cmd_test     = "spring test %p"
+let g:rubytest_cmd_test     = "turn -Itest %p"
 let g:rubytest_cmd_testcase = "turn -Itest %p -n /%c/"
 let g:rubytest_cmd_feature  = "bundle exec cucumber %p"
 let g:rubytest_cmd_story    = "bundle exec cucumber %p -n '%c'"
@@ -264,6 +265,7 @@ nmap <leader>= yss=
 
 " indentLine
 let g:indentLine_color_term = 236
+let g:indentLine_noConcealCursor = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -314,6 +316,7 @@ vmap <expr> < KeepVisualSelection("<")
 "
 augroup general
   autocmd!
+
   " Source .vimrc on write
   au BufWritePost .vimrc source ~/.vimrc
   "and reload vim-powerline plugin after that
@@ -341,6 +344,10 @@ augroup general
 
   " reload .vimrc after saving
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+  " hide cursorline when focus is on other window
+  au VimEnter,WinEnter,BufwinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
 
 augroup END
 
