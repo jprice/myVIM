@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 " repos on github
 Bundle 'alexbel/YankRing.vim'
 Bundle 'bitc/vim-bad-whitespace'
+Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'duff/vim-scratch'
 Bundle 'einars/js-beautify'
@@ -41,7 +42,6 @@ Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/bufexplorer.zip'
@@ -192,7 +192,7 @@ let html_no_rendering = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Syntastic
-let g:syntastic_javascript_checker = "jshint"
+let g:syntastic_javascript_checkers = ["jshint"]
 let g:syntastic_auto_loc_list      = 1
 let g:syntastic_loc_list_height    = 3
 let g:syntastic_csslint_options    ="--ignore=adjoining-classes,floats,font-faces,shorthand,font-sizes,regex-selectors,important"
@@ -317,8 +317,9 @@ vmap <expr> < KeepVisualSelection("<")
 augroup general
   autocmd!
 
-  " Source .vimrc on write
-  au BufWritePost .vimrc source ~/.vimrc
+  " reload .vimrc after saving
+  au BufWritePost $MYVIMRC source $MYVIMRC
+
   "and reload vim-powerline plugin after that
   au BufWritePost .vimrc call Pl#Load()
 
@@ -342,15 +343,11 @@ augroup general
                    \   exe "normal! g`\"" |
                    \ endif
 
-  " reload .vimrc after saving
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC
-
   " hide cursorline when focus is on other window
   au VimEnter,WinEnter,BufwinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
 
 augroup END
-
 
 " Enable filetype detection
 filetype plugin on
