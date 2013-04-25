@@ -29,7 +29,6 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'rson/vim-conque'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'Rykka/trans.vim'
 Bundle 'scrooloose/nerdcommenter'
@@ -224,10 +223,6 @@ let g:ackprg = "ack -Ha --nocolor --nogroup --column --smart-case --ignore-dir=v
 " grep word under cursor in current directory
 nnoremap <Leader>vv :Ack <cword><cr>
 
-" ConqueTerm
-let g:ConqueTerm_ToggleKey     = ''
-let g:ConqueTerm_ReadUnfocused = 1
-
 " vim-rubytests
 let g:rubytest_in_quickfix  = 0
 let g:rubytest_cmd_test     = "turn -Itest %p"
@@ -331,9 +326,6 @@ augroup general
   au BufRead,BufNewFile /etc/nginx/* set ft=nginx
   au BufRead,BufNewFile *.json set ft=json
   au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set ft=markdown
-
-  au BufwinEnter,BufReadPost bash* let b:bad_whitespace_show = 0
-  au BufwinEnter bash* set nocursorline
 
   " Make .sh files executable on write
   au BufWritePost *.sh silent !chmod a+x %
