@@ -48,6 +48,7 @@ Bundle 'vim-scripts/IndexedSearch'
 Bundle 'vim-scripts/JSON.vim'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'vim-scripts/vimwiki'
+Bundle 'wting/rust.vim'
 Bundle 'Yggdroot/indentLine'
 
 
@@ -57,6 +58,8 @@ Bundle 'Yggdroot/indentLine'
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+" vundle required
+filetype off
 " Look ahead as search pattern is specified
 set incsearch
 " Ignore case
