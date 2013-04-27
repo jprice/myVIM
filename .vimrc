@@ -326,6 +326,7 @@ augroup general
 
   au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
   au BufRead,BufNewFile *.coffee set ft=coffee syntax=coffee
+  au BufRead,BufNewFile *.scss set ft=scss syntax=scss
   au BufRead,BufNewFile /etc/nginx/* set ft=nginx
   au BufRead,BufNewFile *.json set ft=json
   au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set ft=markdown
