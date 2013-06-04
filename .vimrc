@@ -89,6 +89,11 @@ set clipboard=unnamed,exclude:cons\\\|linux
 " fix for russian keys
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
+" fold based on indent
+set foldmethod=manual
+" don't fold by default
+set nofoldenable
+
 " Indent settings
 " ---------------
 set tabstop=2
@@ -230,6 +235,8 @@ nnoremap <Leader>vv :Ack <cword><cr>
 let g:rubytest_in_quickfix  = 0
 let g:rubytest_cmd_test     = "turn -Itest %p"
 let g:rubytest_cmd_testcase = "turn -Itest %p -n /%c/"
+let g:rubytest_cmd_spec     = "spring rspec -f documentation --color %p"
+let g:rubytest_cmd_example  = "spring rspec -f documentation --color %p -l '%c'"
 let g:rubytest_cmd_feature  = "bundle exec cucumber %p"
 let g:rubytest_cmd_story    = "bundle exec cucumber %p -n '%c'"
 
