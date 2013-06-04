@@ -204,7 +204,7 @@ let g:syntastic_auto_loc_list      = 1
 let g:syntastic_loc_list_height    = 3
 let g:syntastic_csslint_options    ="--ignore=adjoining-classes,floats,font-faces,shorthand,font-sizes,regex-selectors,important"
 " syntastic can't find right rvm version of ruby
-let g:syntastic_ruby_exec = $HOME.'/.rvm/bin/ruby-1.9.3-p374'
+let g:syntastic_ruby_exec = $HOME.'/.rvm/rubies/ruby-2.0.0-p195/bin/ruby'
 
 " NERDTree
 let g:NERDTreeWinSize           = 40
@@ -229,14 +229,14 @@ nnoremap <silent> <F4> :YRShow<CR>
 " Ack
 let g:ackprg = "ack -Ha --nocolor --nogroup --column --smart-case --ignore-dir=vendor --ignore-dir=log --ignore-dir=cache"
 " grep word under cursor in current directory
-nnoremap <Leader>vv :Ack <cword><cr>
+nnoremap <Leader><Leader>g :Ack <cword><cr>
 
 " vim-rubytests
 let g:rubytest_in_quickfix  = 0
 let g:rubytest_cmd_test     = "turn -Itest %p"
 let g:rubytest_cmd_testcase = "turn -Itest %p -n /%c/"
-let g:rubytest_cmd_spec     = "spring rspec -f documentation --color %p"
-let g:rubytest_cmd_example  = "spring rspec -f documentation --color %p -l '%c'"
+let g:rubytest_cmd_spec     = "spring rspec %p"
+let g:rubytest_cmd_example  = "spring rspec %p -l '%c'"
 let g:rubytest_cmd_feature  = "bundle exec cucumber %p"
 let g:rubytest_cmd_story    = "bundle exec cucumber %p -n '%c'"
 
