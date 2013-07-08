@@ -23,7 +23,7 @@ Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
@@ -38,6 +38,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'sunaku/vim-ruby-minitest'
 Bundle 'szw/vim-dict'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'slim-template/vim-slim'
 "Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -334,6 +335,7 @@ augroup general
   au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
   au BufRead,BufNewFile *.coffee set ft=coffee syntax=coffee
   au BufRead,BufNewFile *.scss set ft=scss syntax=scss
+  au BufRead,BufNewFile *.slim set ft=slim syntax=slim
   au BufRead,BufNewFile /etc/nginx/* set ft=nginx
   au BufRead,BufNewFile *.json set ft=json
   au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set ft=markdown
