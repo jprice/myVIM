@@ -8,6 +8,7 @@ Bundle 'gmarik/vundle'
 " repos on github
 Bundle 'alexbel/YankRing.vim'
 Bundle 'bitc/vim-bad-whitespace'
+Bundle 'bling/vim-airline'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'duff/vim-scratch'
@@ -18,12 +19,12 @@ Bundle 'gorkunov/smartpairs.vim'
 Bundle 'gregsexton/gitv'
 Bundle 'gregsexton/MatchTag'
 Bundle 'int3/vim-extradite'
+Bundle 'ivalkeen/nerdtree-execute'
 Bundle 'janx/vim-rubytest'
 Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'bling/vim-airline'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
@@ -35,10 +36,10 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
+Bundle 'slim-template/vim-slim'
 Bundle 'sunaku/vim-ruby-minitest'
 Bundle 'szw/vim-dict'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'slim-template/vim-slim'
 "Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -273,6 +274,13 @@ nmap <leader>= yss=
 let g:indentLine_color_term = 236
 let g:indentLine_noConcealCursor = 1
 
+" vim-airline
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_linecolumn_prefix = '¶ '
+let g:airline_fugitive_prefix = '⎇ '
+let g:airline_paste_symbol = 'ρ'
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands and mappings
@@ -326,9 +334,6 @@ augroup general
   " reload .vimrc after saving
   au BufWritePost $MYVIMRC source $MYVIMRC
 
-  "and reload vim-powerline plugin after that
-  au BufWritePost .vimrc call Pl#Load()
-
   " Save if focus lost
   au BufLeave,FocusLost * silent! wall
 
@@ -357,3 +362,4 @@ augroup END
 " Enable filetype detection
 filetype plugin on
 filetype plugin indent on
+set ttimeoutlen=50
