@@ -26,11 +26,11 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'majutsushi/tagbar'
+Bundle 'mattn/emmet-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'Rykka/trans.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
@@ -206,7 +206,7 @@ let g:syntastic_auto_loc_list      = 1
 let g:syntastic_loc_list_height    = 3
 let g:syntastic_csslint_options    ="--ignore=adjoining-classes,floats,font-faces,shorthand,font-sizes,regex-selectors,important"
 " syntastic can't find right rvm version of ruby
-let g:syntastic_ruby_exec = $HOME.'/.rvm/rubies/ruby-2.0.0-p195/bin/ruby'
+let g:syntastic_ruby_exec = $HOME.'/.rvm/rubies/ruby-2.0.0-p247/bin/ruby'
 
 " NERDTree
 let g:NERDTreeWinSize           = 40
@@ -278,8 +278,12 @@ let g:indentLine_noConcealCursor = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_linecolumn_prefix = '¶ '
-let g:airline_fugitive_prefix = '⎇ '
+let g:airline_enable_branch = '⎇ '
 let g:airline_paste_symbol = 'ρ'
+let g:airline_theme = 'powerlineish'
+
+" emmet
+let g:user_emmet_leader_key = '<c-e>'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
