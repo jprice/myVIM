@@ -6,7 +6,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 " repos on github
-Bundle 'alexbel/YankRing.vim'
 Bundle 'bitc/vim-bad-whitespace'
 Bundle 'bling/vim-airline'
 Bundle 'bufexplorer.zip'
@@ -34,6 +33,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'nginx.vim'
+Bundle 'YankRing.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Rykka/trans.vim'
 Bundle 'scrooloose/nerdcommenter'
@@ -359,6 +359,9 @@ augroup general
   " hide cursorline when focus is on other window
   au VimEnter,WinEnter,BufwinEnter * setlocal cursorline
   au WinLeave * setlocal nocursorline
+
+  " open nerdtree when vim starts
+  au vimenter * if !argc() | NERDTree | endif
 
 augroup END
 
