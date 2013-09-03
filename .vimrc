@@ -228,7 +228,6 @@ let g:yankring_replace_n_nkey = '' " conflict with ctrlp plugin
 nnoremap <silent> <F4> :YRShow<CR>
 
 " Ack
-let g:ackprg = "ack -Ha --nocolor --nogroup --column --smart-case --ignore-dir=vendor --ignore-dir=log --ignore-dir=cache"
 " grep word under cursor in current directory
 nnoremap <Leader><Leader>g :Ack <cword><cr>
 
