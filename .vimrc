@@ -9,7 +9,6 @@ Bundle 'gmarik/vundle'
 Bundle 'bitc/vim-bad-whitespace'
 Bundle 'bling/vim-airline'
 Bundle 'bufexplorer.zip'
-Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'duff/vim-scratch'
 Bundle 'einars/js-beautify'
@@ -46,6 +45,7 @@ Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vimwiki'
@@ -281,7 +281,7 @@ let g:airline_paste_symbol = 'ρ'
 let g:airline_theme = 'powerlineish'
 
 " emmet
-let g:user_emmet_leader_key = '<c-e>'
+let g:user_emmet_expandabbr_key = '<c-e>'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -292,12 +292,12 @@ command! Vimrc e ~/.vimrc
 command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
 
 " Key mappings
-nnoremap          <F5> :GundoToggle<CR>
-map               <F8> :BufExplorer<cr>
-nmap              <F9>       :NERDTreeToggle<cr>
-vmap              <F9>  <esc>:NERDTreeToggle<cr>i
-imap              <F9>  <esc>:NERDTreeToggle<cr>i
-map      <silent> <F10> :wall<CR>:call FormatAll()<CR> :w<CR>
+nnoremap          <F5>  :GundoToggle<CR>
+map      <silent> <F9> :wall<CR>:call FormatAll()<CR> :w<CR>
+nmap              <F10>       :NERDTreeToggle<cr>
+vmap              <F10>  <esc>:NERDTreeToggle<cr>i
+imap              <F10>  <esc>:NERDTreeToggle<cr>i
+nmap     <silent> <F11> :BufExplorer<CR>
 nmap     <silent> <F12> :TagbarToggle<CR>
 
 
