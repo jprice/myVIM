@@ -7,6 +7,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " repos on github
 Bundle 'bitc/vim-bad-whitespace'
+Bundle 'beloglazov/vim-online-thesaurus'
 Bundle 'bling/vim-airline'
 Bundle 'bufexplorer.zip'
 Bundle 'chrisbra/NrrwRgn'
@@ -282,6 +283,10 @@ let g:airline_theme = 'powerlineish'
 
 " emmet
 let g:user_emmet_expandabbr_key = '<c-e>'
+
+" vim-online-thesaurus
+let g:online_thesaurus_map_keys = 0
+nnoremap <Leader><Leader>r :OnlineThesaurusCurrentWord<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
