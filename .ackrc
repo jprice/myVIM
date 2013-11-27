@@ -1,9 +1,6 @@
 # Ack config for ack.vim plugin(https://github.com/mileszs/ack.vim)
 # Rails focused
 
-# Operate on all files, regardless of type (but still skip directories like blib, CVS , etc.)
---all
-
 # Print the filename for each match
 --with-filename
 
