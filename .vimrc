@@ -202,12 +202,17 @@ let html_no_rendering = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Syntastic
-let g:syntastic_javascript_checkers = ["jshint"]
-let g:syntastic_auto_loc_list      = 1
-let g:syntastic_loc_list_height    = 3
+let g:syntastic_javascript_checkers  = ["jshint"]
+let g:syntastic_auto_loc_list        = 1
+let g:syntastic_loc_list_height      = 3
+let g:syntastic_enable_highlighting  = 0
+let g:syntastic_error_symbol         = '⚡'
+let g:syntastic_style_error_symbol   = '✘'
+let g:syntastic_warning_symbol       = '⚠'
+let g:syntastic_style_warning_symbol = '≈'
 let g:syntastic_csslint_options    ="--ignore=adjoining-classes,floats,font-faces,shorthand,font-sizes,regex-selectors,important"
 " syntastic can't find right rvm version of ruby
-let g:syntastic_ruby_exec = $HOME.'/.rvm/rubies/ruby-2.0.0-p247/bin/ruby'
+let g:syntastic_ruby_exec = $HOME.'/.rvm/rubies/ruby-2.0.0-p353/bin/ruby'
 
 " NERDTree
 let g:NERDTreeWinSize           = 40
@@ -275,12 +280,12 @@ let g:indentLine_color_term = 236
 let g:indentLine_noConcealCursor = 1
 
 " vim-airline
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_linecolumn_prefix = '¶ '
-let g:airline_enable_branch = '⎇ '
-let g:airline_paste_symbol = 'ρ'
-let g:airline_theme = 'powerlineish'
+let g:airline_left_sep          = ''
+let g:airline_right_sep         = ''
+let g:airline_linecolumn_prefix = '¶'
+let g:airline_enable_branch     = '⎇ '
+let g:airline_paste_symbol      = '⇲'
+let g:airline_theme             = 'powerlineish'
 
 " emmet
 let g:user_emmet_expandabbr_key = '<c-e>'

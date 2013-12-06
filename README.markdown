@@ -15,7 +15,7 @@ optional
 ### Installation (openSUSE):
 add repository to get NodeJS:
 
-    sudo zypper in vim vim-data vim-python ctags nodejs ack
+    sudo zypper in vim vim-data ctags nodejs ack
 
     sudo npm install jshint -g
     sudo npm install jsonlint -g
