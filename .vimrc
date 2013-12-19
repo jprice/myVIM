@@ -23,6 +23,7 @@ Bundle 'int3/vim-extradite'
 Bundle 'ivalkeen/nerdtree-execute'
 Bundle 'janx/vim-rubytest'
 Bundle 'JSON.vim'
+Bundle 'AutoTag'
 Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -258,7 +259,7 @@ let g:gist_post_private = 1
 let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 
 " extradit.vim
-map <F2> :Extradit<CR>
+"map <F2> :Extradit<CR>
 
 " Trans.vim
 let g:trans_default_lang = 'ru'
@@ -274,6 +275,7 @@ nmap ts csw'El
 nmap td csw"El
 nmap <leader>- yss-
 nmap <leader>= yss=
+nmap <F2> <C-]>
 
 " indentLine
 let g:indentLine_color_term = 236
