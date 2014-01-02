@@ -275,7 +275,6 @@ nmap ts csw'El
 nmap td csw"El
 nmap <leader>- yss-
 nmap <leader>= yss=
-nmap <F2> <C-]>
 
 " indentLine
 let g:indentLine_color_term = 236
@@ -305,6 +304,9 @@ command! Vimrc e ~/.vimrc
 command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
 
 " Key mappings
+map               <F1> <C-]>
+imap              <F1> <Esc><C-]>
+nmap              <F2> <C-O>
 nnoremap          <F5>  :GundoToggle<CR>
 map      <silent> <F9> :wall<CR>:call FormatAll()<CR> :w<CR>
 nmap              <F10>       :NERDTreeToggle<cr>
