@@ -110,6 +110,8 @@ set shiftwidth=2
 set softtabstop=2
 " replace tabs by spaces
 set expandtab
+" Enable syntax coloring only for short lines
+set synmaxcol=200
 
 " Backup and swap settings
 " ------------------------
@@ -161,7 +163,7 @@ set smartindent
 " Show name of buffer in terminal title
 set title
 
-set nolazyredraw
+set lazyredraw
 
 " show incomplete cmds down the bottom
 set showcmd
