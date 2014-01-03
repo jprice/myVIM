@@ -19,3 +19,4 @@
 --ignore-dir=vendor
 --ignore-dir=log
 --ignore-dir=cache
+--ignore-file=is:tags
