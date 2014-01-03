@@ -55,7 +55,6 @@ Bundle 'vimwiki'
 Bundle 'wting/rust.vim'
 Bundle 'Yggdroot/indentLine'
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General behaviour
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -70,10 +69,15 @@ set incsearch
 set ignorecase
 "...unless uppercase letters used
 set smartcase
+
+"FIXME: Use old regexp engine. New one works extremely slow
+" remove this setting when new regexp enging would be optimized
+set regexpengine=1
+
 "Highlight all matches
 "set hlsearch
 " don't wait ESC-sequences
-set ttimeoutlen=100
+set ttimeoutlen=50
 " more commands history
 set history=100
 " ... and more undolevels
@@ -299,6 +303,12 @@ nnoremap <Leader><Leader>r :OnlineThesaurusCurrentWord<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands and mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Easy window navigation
+noremap <space>h <C-w>h
+noremap <space>j <C-w>j
+noremap <space>k <C-w>k
+noremap <space>l <C-w>l
+
 command! -nargs=* Find :call Find(<f-args>)
 command! Vimrc e ~/.vimrc
 command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
@@ -334,6 +344,8 @@ noremap <C-j> :resize +1<CR>
 noremap <C-k> :resize -1<CR>
 noremap <C-h> :vertical resize -1<CR>
 noremap <C-l> :vertical resize +1<CR>
+
+nnoremap ; :
 
 " Make vaa select the entire file...
 vmap aa VGo1G
@@ -382,4 +394,3 @@ augroup END
 " Enable filetype detection
 filetype plugin on
 filetype plugin indent on
-set ttimeoutlen=50
