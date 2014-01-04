@@ -311,9 +311,7 @@ noremap <space>j <C-w>j
 noremap <space>k <C-w>k
 noremap <space>l <C-w>l
 
-command! -nargs=* Find :call Find(<f-args>)
 command! Vimrc e ~/.vimrc
-command! -bar -nargs=1 OpenURL :call OpenURLInBrowser(<q-args>)
 
 " Key mappings
 map               <F1> <C-]>
