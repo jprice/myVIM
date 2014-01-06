@@ -219,7 +219,7 @@ let g:syntastic_warning_symbol       = '⚠'
 let g:syntastic_style_warning_symbol = '≈'
 let g:syntastic_csslint_options    ="--ignore=adjoining-classes,floats,font-faces,shorthand,font-sizes,regex-selectors,important"
 " syntastic can't find right rvm version of ruby
-let g:syntastic_ruby_exec = $HOME.'/.rvm/rubies/ruby-2.0.0-p353/bin/ruby'
+let g:syntastic_ruby_exec = $HOME.'/.rvm/rubies/ruby-2.1.0/bin/ruby'
 
 " NERDTree
 let g:NERDTreeWinSize           = 40
