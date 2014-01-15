@@ -209,15 +209,15 @@ let html_no_rendering = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Syntastic
-let g:syntastic_javascript_checkers  = ["jshint"]
-let g:syntastic_auto_loc_list        = 1
-let g:syntastic_loc_list_height      = 3
-let g:syntastic_enable_highlighting  = 0
-let g:syntastic_error_symbol         = '☠'
-let g:syntastic_style_error_symbol   = '✘'
-let g:syntastic_warning_symbol       = '⚠'
-let g:syntastic_style_warning_symbol = '≈'
-let g:syntastic_csslint_options    ="--ignore=adjoining-classes,floats,font-faces,shorthand,font-sizes,regex-selectors,important"
+let g:syntastic_javascript_checkers    = ['jshint']
+let g:syntastic_auto_loc_list          = 1
+let g:syntastic_loc_list_height        = 3
+let g:syntastic_enable_highlighting    = 0
+let g:syntastic_error_symbol           = '☠'
+let g:syntastic_style_error_symbol     = '✘'
+let g:syntastic_warning_symbol         = '⚠'
+let g:syntastic_style_warning_symbol   = '≈'
+let g:syntastic_css_csslint_args       = "--ignore= adjoining-classes,floats,font-faces,shorthand,font-sizes,regex-selectors,important"
 " syntastic can't find right rvm version of ruby
 let g:syntastic_ruby_exec = $HOME.'/.rvm/rubies/ruby-2.1.0/bin/ruby'
 
@@ -232,6 +232,7 @@ let g:NERDTreeDirArrows         = 0
 
 " ctrlp
 set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
+map s :CtrlP .<CR>
 
 " yankring
 let g:yankring_manual_clipboard_check = 0
@@ -249,8 +250,8 @@ nnoremap <Leader><Leader>g :Ack <cword><cr>
 let g:rubytest_in_quickfix  = 0
 let g:rubytest_cmd_test     = "turn -Itest %p"
 let g:rubytest_cmd_testcase = "turn -Itest %p -n /%c/"
-let g:rubytest_cmd_spec     = "spring rspec %p"
-let g:rubytest_cmd_example  = "spring rspec %p -l '%c'"
+let g:rubytest_cmd_spec     = "rspec %p"
+let g:rubytest_cmd_example  = "rspec %p -l '%c'"
 let g:rubytest_cmd_feature  = "bundle exec cucumber %p"
 let g:rubytest_cmd_story    = "bundle exec cucumber %p -n '%c'"
 
