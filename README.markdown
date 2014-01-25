@@ -1,8 +1,9 @@
-## My vim files.
+## My vim settings
 
 ### Requirements:
 * Vim 7.3+
 * Python support for Vim, Python 2.4+
+
 optional
 * Exuberant ctags 5.5
 * NodeJS, npm (to install csslint,jsonlint,jshint and etc.)
@@ -11,6 +12,12 @@ optional
 * jshint
 * jsonlint
 * js-yaml
+
+
+## Screenshots
+![](https://raw2.github.com/alexbel/myVIM/master/screenshots/snapshot1.png)
+![](https://raw2.github.com/alexbel/myVIM/master/screenshots/snapshot2.png)
+![](https://raw2.github.com/alexbel/myVIM/master/screenshots/snapshot3.png)
 
 ### Installation (openSUSE):
 add repository to get NodeJS:
