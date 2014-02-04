@@ -250,8 +250,8 @@ nnoremap <Leader><Leader>g :Ack <cword><cr>
 let g:rubytest_in_quickfix  = 0
 let g:rubytest_cmd_test     = "turn -Itest %p"
 let g:rubytest_cmd_testcase = "turn -Itest %p -n /%c/"
-let g:rubytest_cmd_spec     = "rspec %p"
-let g:rubytest_cmd_example  = "rspec %p -l '%c'"
+let g:rubytest_cmd_spec     = "spring rspec %p"
+let g:rubytest_cmd_example  = "spring rspec %p -l '%c'"
 let g:rubytest_cmd_feature  = "bundle exec cucumber %p"
 let g:rubytest_cmd_story    = "bundle exec cucumber %p -n '%c'"
 
