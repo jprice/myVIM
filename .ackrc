@@ -20,4 +20,5 @@
 --ignore-dir=log
 --ignore-dir=cache
 --ignore-dir=doc
+--ignore-dir=tmp
 --ignore-file=is:tags
