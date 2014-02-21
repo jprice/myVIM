@@ -1,18 +1,17 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins repos
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Setup Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins repos
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'gmarik/vundle'
-" repos on github
 Bundle 'bitc/vim-bad-whitespace'
 Bundle 'beloglazov/vim-online-thesaurus'
 Bundle 'bling/vim-airline'
 Bundle 'bufexplorer.zip'
 Bundle 'chrisbra/NrrwRgn'
 Bundle 'duff/vim-scratch'
-Bundle 'einars/js-beautify'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'gorkunov/smartpairs.vim'
@@ -250,8 +249,8 @@ nnoremap <Leader><Leader>g :Ack <cword><cr>
 let g:rubytest_in_quickfix  = 0
 let g:rubytest_cmd_test     = "turn -Itest %p"
 let g:rubytest_cmd_testcase = "turn -Itest %p -n /%c/"
-let g:rubytest_cmd_spec     = "spring rspec %p"
-let g:rubytest_cmd_example  = "spring rspec %p -l '%c'"
+let g:rubytest_cmd_spec     = "rspec %p"
+let g:rubytest_cmd_example  = "rspec %p -l '%c'"
 let g:rubytest_cmd_feature  = "bundle exec cucumber %p"
 let g:rubytest_cmd_story    = "bundle exec cucumber %p -n '%c'"
 
@@ -370,7 +369,6 @@ augroup general
   au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
   au BufRead,BufNewFile *.coffee set ft=coffee syntax=coffee
   au BufRead,BufNewFile *.scss set ft=scss syntax=scss
-  au BufRead,BufNewFile *.slim set ft=slim syntax=slim
   au BufRead,BufNewFile /etc/nginx/* set ft=nginx
   au BufRead,BufNewFile *.json set ft=json
   au BufNewFile,BufRead *.markdown,*.md,*.mdown,*.mkd,*.mkdn set ft=markdown
