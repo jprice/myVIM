@@ -5,6 +5,7 @@ call vundle#rc()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins repos
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'danchoi/ri.vim'
 Bundle 'gmarik/vundle'
 Bundle 'bitc/vim-bad-whitespace'
 Bundle 'beloglazov/vim-online-thesaurus'
@@ -48,6 +49,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-jdaddy'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vimwiki'
@@ -249,8 +251,8 @@ nnoremap <Leader><Leader>g :Ack <cword><cr>
 let g:rubytest_in_quickfix  = 0
 let g:rubytest_cmd_test     = "turn -Itest %p"
 let g:rubytest_cmd_testcase = "turn -Itest %p -n /%c/"
-let g:rubytest_cmd_spec     = "rspec %p"
-let g:rubytest_cmd_example  = "rspec %p -l '%c'"
+let g:rubytest_cmd_spec     = "spring rspec %p"
+let g:rubytest_cmd_example  = "spring rspec %p -l '%c'"
 let g:rubytest_cmd_feature  = "bundle exec cucumber %p"
 let g:rubytest_cmd_story    = "bundle exec cucumber %p -n '%c'"
 
@@ -281,6 +283,9 @@ nmap ts csw'El
 nmap td csw"El
 nmap <leader>- yss-
 nmap <leader>= yss=
+
+" jdaddy
+nnoremap <Leader>j :exe jdaddy#reformat('jdaddy#outer_pos', v:count1)<cr>
 
 " indentLine
 let g:indentLine_color_term = 236
