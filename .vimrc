@@ -234,12 +234,12 @@ let g:NERDTreeDirArrows         = 0
 set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
 let g:ctrlp_map = 's'
 
-" yankring
+" YankRing
 let g:yankring_manual_clipboard_check = 0
 let g:yankring_history_dir    = '~/tmp,/tmp,/var/tmp' " store history in RAM
 let g:yankring_history_file   = '.yankring_history'
-let g:yankring_replace_n_pkey = '' " no cycle, bacause to long and
-let g:yankring_replace_n_nkey = '' " conflict with ctrlp plugin
+let g:yankring_replace_n_pkey = '<C-P>' " define again b/c of conflicts
+let g:yankring_replace_n_nkey = '<C-N>' " with some other plugin
 nnoremap <silent> <F4> :YRShow<CR>
 
 " Ack
