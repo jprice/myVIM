@@ -1,17 +1,18 @@
 " Setup Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+Bundle 'gmarik/vundle'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins repos
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'danchoi/ri.vim'
-Bundle 'gmarik/vundle'
-Bundle 'bitc/vim-bad-whitespace'
+Bundle 'AutoTag'
 Bundle 'beloglazov/vim-online-thesaurus'
+Bundle 'bitc/vim-bad-whitespace'
 Bundle 'bling/vim-airline'
 Bundle 'bufexplorer.zip'
 Bundle 'chrisbra/NrrwRgn'
+Bundle 'danchoi/ri.vim'
 Bundle 'duff/vim-scratch'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
@@ -23,7 +24,6 @@ Bundle 'int3/vim-extradite'
 Bundle 'ivalkeen/nerdtree-execute'
 Bundle 'janx/vim-rubytest'
 Bundle 'JSON.vim'
-Bundle 'AutoTag'
 Bundle 'jszakmeister/vim-togglecursor'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -33,9 +33,7 @@ Bundle 'mattn/emmet-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'smancill/conky-syntax.vim'
 Bundle 'nginx.vim'
-Bundle 'YankRing.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'Rykka/trans.vim'
 Bundle 'scrooloose/nerdcommenter'
@@ -43,9 +41,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'slim-template/vim-slim'
+Bundle 'smancill/conky-syntax.vim'
 Bundle 'szw/vim-dict'
 Bundle 'terryma/vim-multiple-cursors'
-"Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -54,6 +52,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'vimwiki'
 Bundle 'wting/rust.vim'
+Bundle 'YankRing.vim'
 Bundle 'Yggdroot/indentLine'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -233,7 +232,7 @@ let g:NERDTreeDirArrows         = 0
 
 " ctrlp
 set wildignore+=*/.git/*,*/tmp/*,*.zip,*.gz
-map s :CtrlP .<CR>
+let g:ctrlp_map = 's'
 
 " yankring
 let g:yankring_manual_clipboard_check = 0
@@ -272,9 +271,6 @@ let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 " Trans.vim
 let g:trans_default_lang = 'ru'
 "let g:trans_map_trans = '<leader>tt' by default
-
-" AutoClose
-let g:AutoClosePairs = {'(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '#{': '}'}
 
 " Surround
 " remap surround key mapprings
