@@ -219,7 +219,7 @@ let g:syntastic_warning_symbol         = '⚠'
 let g:syntastic_style_warning_symbol   = '≈'
 let g:syntastic_css_csslint_args       = "--ignore= adjoining-classes,floats,font-faces,shorthand,font-sizes,regex-selectors,important"
 " syntastic can't find right rvm version of ruby
-let g:syntastic_ruby_exec = $HOME.'/.rvm/rubies/ruby-2.1.0/bin/ruby'
+let g:syntastic_ruby_exec = $HOME.'/.rvm/rubies/ruby-2.1.2/bin/ruby'
 
 " NERDTree
 let g:NERDTreeWinSize           = 40
@@ -346,7 +346,12 @@ noremap <C-k> :resize -1<CR>
 noremap <C-h> :vertical resize -1<CR>
 noremap <C-l> :vertical resize +1<CR>
 
+" swap : ; even in insert mode
 nnoremap ; :
+vnoremap ; :
+vnoremap : ;
+inoremap ; :
+inoremap : ;
 
 " Make vaa select the entire file...
 vmap aa VGo1G
