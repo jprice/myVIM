@@ -251,7 +251,7 @@ let g:rubytest_in_quickfix  = 0
 let g:rubytest_cmd_test     = "turn -Itest %p"
 let g:rubytest_cmd_testcase = "turn -Itest %p -n /%c/"
 let g:rubytest_cmd_spec     = "spring rspec %p"
-let g:rubytest_cmd_example  = "spring rspec %p -l '%c'"
+let g:rubytest_cmd_example  = "spring rspec %p:'%c'"
 let g:rubytest_cmd_feature  = "bundle exec cucumber %p"
 let g:rubytest_cmd_story    = "bundle exec cucumber %p -n '%c'"
 
@@ -352,6 +352,13 @@ vnoremap ; :
 vnoremap : ;
 inoremap ; :
 inoremap : ;
+
+" remap esc
+inoremap ff <Esc>
+inoremap 9 (
+inoremap ( 9
+inoremap 0 )
+inoremap ) 0
 
 " Make vaa select the entire file...
 vmap aa VGo1G
