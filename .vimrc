@@ -354,7 +354,7 @@ inoremap ; :
 inoremap : ;
 
 " remap esc
-inoremap ff <Esc>
+inoremap jj <Esc>
 inoremap 9 (
 inoremap ( 9
 inoremap 0 )
