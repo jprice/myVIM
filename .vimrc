@@ -346,19 +346,11 @@ noremap <C-k> :resize -1<CR>
 noremap <C-h> :vertical resize -1<CR>
 noremap <C-l> :vertical resize +1<CR>
 
-" swap : ; even in insert mode
+" swap : ;
 nnoremap ; :
-vnoremap ; :
-vnoremap : ;
-inoremap ; :
-inoremap : ;
 
 " remap esc
 inoremap jj <Esc>
-inoremap 9 (
-inoremap ( 9
-inoremap 0 )
-inoremap ) 0
 
 " Make vaa select the entire file...
 vmap aa VGo1G
