@@ -71,10 +71,6 @@ set ignorecase
 "...unless uppercase letters used
 set smartcase
 
-"FIXME: Use old regexp engine. New one works extremely slow
-" remove this setting when new regexp enging would be optimized
-set regexpengine=1
-
 "Highlight all matches
 "set hlsearch
 " don't wait ESC-sequences
