@@ -263,9 +263,6 @@ let g:gist_post_private = 1
 " vimwiki
 let g:vimwiki_list = [{'path': '~/.vimwiki/'}]
 
-" extradit.vim
-"map <F2> :Extradit<CR>
-
 " Trans.vim
 let g:trans_default_lang = 'ru'
 "let g:trans_map_trans = '<leader>tt' by default
