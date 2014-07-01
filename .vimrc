@@ -268,7 +268,7 @@ let g:trans_default_lang = 'ru'
 "let g:trans_map_trans = '<leader>tt' by default
 
 " Surround
-" remap surround key mapprings
+" remap surround key mappings
 " t+s(ingle) quotes, t+d(ouble) quotes
 nmap ts csw'El
 nmap td csw"El
