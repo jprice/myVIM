@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 # run: . .vim/install.sh to install environment
 
