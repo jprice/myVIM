@@ -17,7 +17,7 @@
   "dojo"        : true,
 
   // Extra globals.
-  "predef"      : ["google", "helpers", "Slick", "Routes", "accounting", "_"],
+  "predef"      : ["google", "helpers", "Slick", "Routes", "accounting", "_", "moment"],
 
   // Development
   "debug" : false, // Allow debugger statements e.g. browser breakpoints.
