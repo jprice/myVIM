@@ -6,6 +6,7 @@ Bundle 'gmarik/vundle'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins repos
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'alexbel/vim-rubygems'
 Bundle 'AutoTag'
 Bundle 'beloglazov/vim-online-thesaurus'
 Bundle 'bitc/vim-bad-whitespace'
