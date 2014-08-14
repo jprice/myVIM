@@ -209,6 +209,7 @@ let html_no_rendering = 1
 
 " Syntastic
 let g:syntastic_javascript_checkers    = ['jshint']
+let g:syntastic_scss_checkers          = ['scss_lint']
 let g:syntastic_auto_loc_list          = 1
 let g:syntastic_loc_list_height        = 3
 let g:syntastic_enable_highlighting    = 0
