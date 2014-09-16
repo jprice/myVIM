@@ -4,7 +4,7 @@
 * Vim 7.3+
 * Python support for Vim, Python 2.4+
 
-optional
+optional:
 * Exuberant ctags 5.5
 * NodeJS, npm (to install csslint,jsonlint,jshint and etc.)
 * ack
@@ -12,6 +12,9 @@ optional
 * jshint
 * jsonlint
 * js-yaml
+
+  gems:
+* flog
 
 
 ## Screenshots
