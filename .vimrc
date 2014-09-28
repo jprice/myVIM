@@ -34,6 +34,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
+Plugin 'mephux/vim-jsfmt'
 Plugin 'mileszs/ack.vim'
 Plugin 'nginx.vim'
 Plugin 'pangloss/vim-javascript'
@@ -303,6 +304,8 @@ let g:user_emmet_expandabbr_key = '<c-e>'
 let g:online_thesaurus_map_keys = 0
 nnoremap <Leader><Leader>r :OnlineThesaurusCurrentWord<CR>
 
+" vim-jsfmt
+let g:js_fmt_autosave = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands and mappings
