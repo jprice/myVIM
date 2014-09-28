@@ -12,6 +12,7 @@ optional:
 * jshint
 * jsonlint
 * js-yaml
+* jsfmt
 
   gems:
 * flog
@@ -31,6 +32,7 @@ add repository to get NodeJS:
     sudo npm install jsonlint -g
     sudo npm install csslint -g
     sudo npm install js-yaml -g
+    sudo npm install jsfmt -g
 
 Another distributives:
 You should install these packages via your favorite package manager or install from source code
