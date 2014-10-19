@@ -8,7 +8,9 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins repos
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'alexbel/vim-rubygems'
+Plugin 'alexbel/vim-whisper-theme'
 Plugin 'AutoTag'
+Plugin 'morhetz/gruvbox'
 Plugin 'beloglazov/vim-online-thesaurus'
 Plugin 'bitc/vim-bad-whitespace'
 Plugin 'bling/vim-airline'
@@ -141,10 +143,17 @@ set cursorline
 " more colors
 set t_Co=256
 " colorscheme lucius
-color lucius
-hi Normal           guifg=#e0e0e0           guibg=#202020
-hi Normal           ctermfg=253             ctermbg=16
-hi CursorLineNr     ctermfg=253             ctermbg=237
+"color lucius
+"hi Normal           guifg=#e0e0e0           guibg=#202020
+"hi Normal           ctermfg=253             ctermbg=16
+"hi CursorLineNr     ctermfg=253             ctermbg=237
+
+let g:gruvbox_italic=0
+let g:gruvbox_underline=0
+set background=dark
+colorscheme gruvbox
+hi Normal                   ctermbg=black
+hi CursorLineNr ctermfg=253 ctermbg=237
 
 "vertical/horizontal scroll off settings
 set scrolloff=3
@@ -295,7 +304,7 @@ let g:airline_right_sep         = ''
 let g:airline_linecolumn_prefix = '¶'
 let g:airline_enable_branch     = '⎇ '
 let g:airline_paste_symbol      = '⇲'
-let g:airline_theme             = 'powerlineish'
+let g:airline_theme             = 'whisper'
 
 " emmet
 let g:user_emmet_expandabbr_key = '<c-e>'
