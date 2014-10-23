@@ -139,21 +139,25 @@ set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 
-set cursorline
 " more colors
 set t_Co=256
-" colorscheme lucius
-"color lucius
-"hi Normal           guifg=#e0e0e0           guibg=#202020
-"hi Normal           ctermfg=253             ctermbg=16
-"hi CursorLineNr     ctermfg=253             ctermbg=237
 
+" colors and theme overrides
+set cursorline
 let g:gruvbox_italic=0
 let g:gruvbox_underline=0
 set background=dark
 colorscheme gruvbox
+
 hi Normal                   ctermbg=black
-hi CursorLineNr ctermfg=253 ctermbg=237
+hi CursorLineNr ctermfg=223 ctermbg=237
+
+hi LineNr ctermfg=243 ctermbg=237
+hi Function ctermfg=173 cterm=none
+"hi Label ctermfg=73 cterm=none
+hi Constant ctermfg=73
+hi Number ctermfg=73
+hi Boolean ctermfg=73
 
 "vertical/horizontal scroll off settings
 set scrolloff=3
@@ -299,11 +303,12 @@ let g:indentLine_color_term = 236
 let g:indentLine_noConcealCursor = 1
 
 " vim-airline
+let g:airline_symbols = {}
 let g:airline_left_sep          = ''
 let g:airline_right_sep         = ''
-let g:airline_linecolumn_prefix = '¶'
-let g:airline_enable_branch     = '⎇ '
-let g:airline_paste_symbol      = '⇲'
+let g:airline_symbols.linenr    = '¶'
+let g:airline#extensions#branch#enabled = 1
+let g:airline_symbols.paste     = '⇲'
 let g:airline_theme             = 'whisper'
 
 " emmet
