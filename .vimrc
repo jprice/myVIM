@@ -14,7 +14,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'beloglazov/vim-online-thesaurus'
 Plugin 'bitc/vim-bad-whitespace'
 Plugin 'bling/vim-airline'
-Plugin 'bufexplorer.zip'
+Plugin 'jlanzarotta/bufexplorer'
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'danchoi/ri.vim'
 Plugin 'duff/vim-scratch'
@@ -154,7 +154,6 @@ hi CursorLineNr ctermfg=223 ctermbg=237
 
 hi LineNr ctermfg=243 ctermbg=237
 hi Function ctermfg=173 cterm=none
-"hi Label ctermfg=73 cterm=none
 hi Constant ctermfg=73
 hi Number ctermfg=73
 hi Boolean ctermfg=73
