@@ -14,9 +14,6 @@ optional:
 * js-yaml
 * jsfmt
 
-  gems:
-* flog
-
 
 ## Screenshots
 ![](https://raw2.github.com/alexbel/myVIM/master/screenshots/snapshot1.png)
