@@ -149,14 +149,17 @@ let g:gruvbox_underline=0
 set background=dark
 colorscheme gruvbox
 
-hi Normal                   ctermbg=black
+hi Boolean   ctermfg=73
+hi Constant  ctermfg=73
 hi CursorLineNr ctermfg=223 ctermbg=237
-
-hi LineNr ctermfg=243 ctermbg=237
-hi Function ctermfg=173 cterm=none
-hi Constant ctermfg=73
-hi Number ctermfg=73
-hi Boolean ctermfg=73
+hi Directory ctermfg=107
+hi Function  ctermfg=173 cterm=none
+hi Type  ctermfg=179
+hi Typedef  ctermfg=179
+hi LineNr    ctermfg=243 ctermbg=237
+hi Normal                ctermbg=black
+hi Number    ctermfg=73
+hi String    ctermfg=107
 
 "vertical/horizontal scroll off settings
 set scrolloff=3

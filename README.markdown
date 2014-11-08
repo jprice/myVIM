@@ -16,9 +16,9 @@ optional:
 
 
 ## Screenshots
-![](https://raw2.github.com/alexbel/myVIM/master/screenshots/snapshot1.png)
-![](https://raw2.github.com/alexbel/myVIM/master/screenshots/snapshot2.png)
-![](https://raw2.github.com/alexbel/myVIM/master/screenshots/snapshot3.png)
+![](https://raw.githubusercontent.com/alexbel/myVIM/master/screenshots/snapshot1.png)
+![](https://raw.githubusercontent.com/alexbel/myVIM/master/screenshots/snapshot2.png)
+![](https://raw.githubusercontent.com/alexbel/myVIM/master/screenshots/snapshot3.png)
 
 ### Installation (openSUSE):
 add repository to get NodeJS:
