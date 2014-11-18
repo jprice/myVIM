@@ -12,7 +12,7 @@ Plugin 'alexbel/vim-whisper-theme'
 Plugin 'AutoTag'
 Plugin 'morhetz/gruvbox'
 Plugin 'beloglazov/vim-online-thesaurus'
-Plugin 'bitc/vim-bad-whitespace'
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'bling/vim-airline'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'chrisbra/NrrwRgn'
@@ -309,9 +309,11 @@ let g:airline_symbols = {}
 let g:airline_left_sep          = ''
 let g:airline_right_sep         = ''
 let g:airline_symbols.linenr    = '¶'
+let g:airline_symbols.branch    = '⎇'
 let g:airline#extensions#branch#enabled = 1
 let g:airline_symbols.paste     = '⇲'
 let g:airline_theme             = 'whisper'
+let g:airline_symbols.space     = ' '
 
 " emmet
 let g:user_emmet_expandabbr_key = '<c-e>'
