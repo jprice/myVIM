@@ -1,0 +1,24 @@
+# Ack config for ack.vim plugin(https://github.com/mileszs/ack.vim)
+# Rails focused
+
+# Print the filename for each match
+--with-filename
+
+# ack.vim handles colors for us. Don't change
+--nocolor
+
+# Print one result per line
+--nogroup
+
+# Show the column number of the first match.
+--column
+
+--smart-case
+
+--ignore-dir=coverage
+--ignore-dir=vendor
+--ignore-dir=log
+--ignore-dir=cache
+--ignore-dir=doc
+--ignore-dir=tmp
+--ignore-file=is:tags

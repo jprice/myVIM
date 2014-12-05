@@ -1,0 +1,7 @@
+viminfo
+swp
+backups/*
+*~
+.netrwhist
+beautify.settings
+bundle/*
