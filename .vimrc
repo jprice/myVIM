@@ -10,11 +10,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'alexbel/vim-rubygems'
 Plugin 'alexbel/vim-whisper-theme'
 Plugin 'AutoTag'
-Plugin 'morhetz/gruvbox'
 Plugin 'beloglazov/vim-online-thesaurus'
-Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'bling/vim-airline'
-Plugin 'jlanzarotta/bufexplorer'
 Plugin 'chrisbra/NrrwRgn'
 Plugin 'danchoi/ri.vim'
 Plugin 'duff/vim-scratch'
@@ -27,6 +24,7 @@ Plugin 'IndexedSearch'
 Plugin 'int3/vim-extradite'
 Plugin 'ivalkeen/nerdtree-execute'
 Plugin 'janx/vim-rubytest'
+Plugin 'jlanzarotta/bufexplorer'
 Plugin 'JSON.vim'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'kana/vim-smartinput'
@@ -38,7 +36,9 @@ Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'mephux/vim-jsfmt'
 Plugin 'mileszs/ack.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'nginx.vim'
+Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'pangloss/vim-javascript'
 Plugin 'Rykka/trans.vim'
 Plugin 'scrooloose/nerdcommenter'
@@ -61,6 +61,7 @@ Plugin 'vimwiki'
 Plugin 'wting/rust.vim'
 Plugin 'YankRing.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'Z1MM32M4N/vim-superman'
 
 " finishing setup vundle
 call vundle#end()
@@ -413,7 +414,7 @@ augroup general
   au WinLeave * setlocal nocursorline
 
   " open nerdtree when vim starts
-  au vimenter * if !argc() | NERDTree | endif
+  au vimenter * if !argc() && &filetype != 'man' | NERDTree | endif
 
 augroup END
 
