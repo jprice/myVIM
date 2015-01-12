@@ -1,4 +1,5 @@
 ## My vim settings
+I "borrowed" these from [alexbel](https://github.com/alexbel/myVIM)
 
 ### Requirements:
 * Vim 7.3+
@@ -15,7 +16,7 @@ optional:
 * jsfmt
 
 
-### Installation (openSUSE):
+### Installation:
 add repository to get NodeJS:
 
     sudo zypper in vim vim-data ctags nodejs ack
@@ -31,7 +32,7 @@ You should install these packages via your favorite package manager or install f
 
 Clone repo:
 
-    git clone git://github.com/alexbel/myVIM.git ~/.vim
+    git clone git://github.com/jprice/myVIM.git ~/.vim
 
 and run:
 
